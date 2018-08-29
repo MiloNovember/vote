@@ -1,0 +1,254 @@
+{{each questionList as item index}}
+<!-- 单选题 -->
+    {{if item.type=='1'&&item.multiSelect=='0'}}
+        <div class="votesItem {{'required'+item.required}}" id="{{'items'+index}}">
+            <div class="survey-title">
+                {{if !!item.required}}
+                <span class="required">*</span>
+                {{/if}}
+                <h3>{{index+1}}、{{item.title}}(单选)</h3>
+            </div>
+            <ul id="items" class="items">
+                {{each item.questionPartList as option index}}
+                <!-- 单选没有图片 -->
+                    {{if !option.url}}
+                        <!-- 选项里没有填空 -->
+                        {{if !option.questionPart}} 
+                            <li class="radio_li">
+                                {{if !option.defaultSelect}}
+                                    <i class="icon iconfont icon-circle-outline">
+                                        <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </i>
+                                    
+                                {{else}}
+                                    <i class="icon iconfont icon-circle-outline icon-yuan">
+                                        <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </i>
+                                {{/if}}
+                                <label>{{option.content}}</label>
+                            </li>       
+                        {{else}}
+                        <!-- 选项里有填空 -->
+                           
+                            <li class="radio_li">
+                                {{if !option.defaultSelect}}
+                                    <i class="icon iconfont icon-circle-outline">
+                                        <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </i>
+                                {{else}}
+                                    <i class="icon iconfont icon-circle-outline icon-yuan">
+                                        <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </i>
+                                {{/if}}
+                                {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label>{{option.content}}{{option.questionPart.content}}：</label><input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" class="only sele" type="text" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
+                            </li>
+                            
+                        {{/if}}
+                    {{/if}}
+                    
+                    <!-- 单选有图片 -->
+                    {{if !!option.url}}
+                        <!-- 选项里没有填空 -->
+                        {{if !option.questionPart}}
+                            <li class="radio_li radio_photo">
+                                    <img src="{{option.url}}">
+                                    <div class="img_warp">
+                                        {{if !option.defaultSelect}}
+                                            <i class="icon iconfont icon-circle-outline">
+                                                <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                            </i>
+                                        {{else}}
+                                            <i class="icon iconfont icon-circle-outline icon-yuan">
+                                                <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                            </i>
+                                        {{/if}}
+                                        <label>{{option.content}}</label>
+                                    </div>
+                            </li>
+                        {{else}}
+                            <!-- 选项里有填空 -->
+                            <li class="radio_li radio_photo">
+                                    <img src="{{option.url}}">
+                                    <div class="img_warp">
+                                        {{if !option.defaultSelect}}
+                                        <i class="icon iconfont icon-circle-outline">
+                                            <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                        </i>
+                                        {{else}}
+                                            <i class="icon iconfont icon-circle-outline icon-yuan">
+                                                <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                            </i>
+                                        {{/if}}
+                                        {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label>{{option.content}}{{option.questionPart.content}}：</label><input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" class="only sele" type="text" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
+                                    </div>
+                            </li>
+                        {{/if}}
+                    {{/if}}
+                {{/each}}
+
+            </ul>
+        </div>
+    {{/if}}
+<!-- 多选题 -->
+    {{if item.type=='1'&&item.multiSelect=='1'}}
+        <div class="votesItem {{'required'+item.required}}">
+            <div class="survey-title">
+                {{if !!item.required}}
+                <span class="required">*</span>
+                {{/if}}
+                <h3 data-questionId={{item.id}}>{{index+1}}、{{item.title}}(多选)</h3>
+            </div>
+            <ul class="items">
+            {{each item.questionPartList as option index}}
+                <!-- 双选有图片 -->
+                {{if !!option.url}}
+                    <!-- 选项里没有填空 -->
+                    {{if !option.questionPart}}
+                        {{if !option.defaultSelect}}
+                            <li  class="checkbox_li fl">
+                                <img src="{{option.url}}">
+                                <div class="fuck">
+                                    <span class="checkbox_warp">
+                                        <input type="checkbox" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </span>
+                                    <label class="sb">川菜</label>
+                                </div>
+                            </li>
+                        {{else}}
+                            <li  class="checkbox_li fl on">
+                                <img src="{{option.url}}">
+                                <div class="fuck">
+                                    <span class="checkbox_warp">
+                                        <input class='sele' type="checkbox" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </span>
+                                    <label class="sb">川菜</label>
+                                </div>
+                            </li>
+                        {{/if}}
+                    {{else}}
+                    <!-- 选项里有填空 -->
+                    {{if !option.defaultSelect}}
+                    <li  class="checkbox_li fl">
+                        <img src="{{option.url}}">
+                        <div class="fuck">
+                            <span class="checkbox_warp">
+                                <input type="checkbox" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                            </span>
+                             {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label class="sb">其他 请说明(非必填)：</label>
+                            <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" type="text" class="only sele" id="" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}}/>
+                        </div>
+                    </li>
+                    {{else}}
+                        <li class="checkbox_li on fl">
+                            <img src="{{option.url}}">
+                            <div class="fuck">
+                                <span class="checkbox_warp">
+                                    <input type="checkbox" class="sele" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                </span>
+                                {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label class="sb">其他 请说明：</label>
+                                <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" type="text" class="only sele" id="" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
+                            </div>
+                        </li>
+                    {{/if}}
+
+                    {{/if}}
+                {{/if}}
+
+                 <!-- 双选没有图片 -->
+                    {{if !option.url}}
+                        <!-- 选项里没有填空 -->
+                        {{if !option.questionPart}}
+                            {{if !option.defaultSelect}}
+                                <li class="checkbox_li">
+                                    <span class="checkbox_warp">
+                                        <input type="checkbox" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </span>
+                                    <label>川菜</label>
+                                </li>
+                            {{else}}
+                                <li class="checkbox_li on">
+                                    <span class="checkbox_warp">
+                                        <input type="checkbox" class='sele' name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </span>
+                                    <label>川菜</label>
+                                </li>
+                            {{/if}}
+                        {{else}}
+                        <!-- 选项里有填空 -->
+                            {{if !option.defaultSelect}}
+                                <li class="checkbox_li">
+                                    <span class="checkbox_warp">
+                                        <input type="checkbox" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </span>
+                                    {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label>{{option.content}}{{option.questionPart.content}}：</label>
+                                    <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" class="only sele" type="text" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
+                                    <!-- <input type="text" class="only" id="" value="" /> -->
+                                </li>
+                            {{else}}
+                                <li class="checkbox_li on">
+                                    <span class="checkbox_warp">
+                                        <input type="checkbox" class="sele" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    </span>
+                                    {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label>{{option.content}}{{option.questionPart.content}}：</label>
+                                    <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" class="only sele" type="text" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
+                                    <!-- <input type="text" class="only" id="" value="" /> -->
+                                </li>
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+            {{/each}}
+            </ul>
+        </div>
+    {{/if}} 
+<!-- 填空题 -->
+    {{if item.type=='2'&&item.multiSelect=='0'}}
+        <div class="votesItem {{'required'+item.required}}">
+            <div class="survey-title">
+                    {{if !!item.required}}
+                    <span class="required">*</span>
+                    {{/if}}
+                <h3>{{index+1}}、{{item.title}}</h3>
+            </div>
+            {{if item.questionPartList.length=='1'}}
+            {{each item.questionPartList as option index}}
+            <textarea data-questionPartId={{option.id}} data-questionId={{item.id}} rows="3" value="" class="sele"></textarea>
+            {{/each}}
+            {{else}}
+            <ul class="items blank">
+                {{each item.questionPartList as option index}}
+                    <li>
+                        {{if !!option.mustSelect}}
+                        <span class="required">*</span>
+                        {{/if}}
+                        <label>{{option.content}}: </label>
+                        {{if option.maximum>20}}
+                            <input data-questionPartId={{option.id}} data-questionId={{item.id}} onblur='yanzheng({{option.verification}},{{option.mustSelect}}, this)' class="radio sele" type="text" id="" value="" />
+                        {{else}}
+                        <input data-questionPartId={{option.id}} data-questionId={{item.id}} class="only radio sele" onblur='yanzheng({{option.verification}},{{option.mustSelect}}, this)' type="text" id="" value="" />
+                        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+
+        </div>
+    {{/if}}
+{{/each}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

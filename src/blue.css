@@ -1,0 +1,21 @@
+.top{
+    background: #2A95CB;
+}
+
+.vote-title{
+    color: #2A95CB;
+    border-bottom: 2px solid #2A95CB;
+}
+
+.icon-yuan{
+    color:#2A95CB;
+    margin-right:4px;
+}
+.votesItem .on .checkbox_warp{
+    background-color:#2A95CB;
+    background: url(../img/multi.png) no-repeat center center #2A95CB !important;
+    border-color: #2A95CB;
+}
+.button{
+    background: #2A95CB;
+}

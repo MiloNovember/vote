@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./src/index.css" />
+    <link rel="stylesheet" type="text/css" href="./src/iconfont.css" />
+    <link id="css-src" rel="stylesheet" href="./src/gray.css">
+    <link rel="icon" href="data:;base64,=">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script src="./js/common.js"></script>
+    <script type="text/javascript" src="./tpl/build/template.js"></script>
+    <title id="voteName"></title>
+    
+</head>
+
+<style type="text/css">
+    .icon {
+        /* 通过设置 font-size 来改变图标大小 */
+        width: 1em;
+        height: 1em;
+        /* 图标和文字相邻时，垂直对齐 */
+        /*vertical-align: -0.15em;*/
+        /* 通过设置 color 来改变 SVG 的颜色/fill */
+        fill: currentColor;
+        /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+         normalize.css 中也包含这行 */
+        overflow: hidden;
+    }
+</style>
+
+<body>
+    <div class="nav">
+        <div class="nav-wap">
+            <!-- <img class="notice" src="img/laba.png" /> -->
+            <div id="container">
+
+                <div class="txtMarquee-left">
+
+                    <div class="grzx-bd">
+                        <ul class="infoList">
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-op">
+                <li class="user">
+                    <a href="javascript:;">
+                        <img src="img/user.png" />
+                        <span id="username">Hi，你好</span>
+                    </a>
+                    <ul id="ps-nav">
+                        <li>
+                            <a href="./index.html">个人中心</a>
+                        </li>
+                        <li id="sign-out" class="sign-out">
+                            <a href="javascript:;">注销登陆</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li id="channel" onmouseover="show()" onmouseout="hide()">
+                    <a href="">
+                        <img src="img/Rectangle 4.png" />
+                        <span>频道</span>
+                    </a>
+
+                </li>
+            </ul>
+            <div id="channel-list" onmouseover="show()" onmouseout="hide()">
+                <ul id="navItem">
+                    <!-- <li>
+                        <a href="">首页</a>
+                    </li>
+                    <li class="channel1">
+                        <a href="">宣传思想工作要闻栏目</a>
+                    </li>
+                    <li class="channel2">
+                        <a href="">中宣部领导</a>
+                    </li>
+                    <li class="channel3">
+                        <a href="">宣传动态栏目</a>
+                    </li>
+                    <li>
+                        <a href="">政策法规</a>
+                    </li>
+                    <li>
+                        <a href="">理论</a>
+                    </li>
+                    <li>
+                        <a href="">舆论</a>
+                    </li>
+                    <li>
+                        <a href="">文化</a>
+                    </li>
+                    <li>
+                        <a href="">文明</a>
+                    </li>
+                    <li class="channel4">
+                        <a href="">党建工作</a>
+                    </li>
+                    <li class="channel5">
+                        <a href="">多媒体报道</a>
+                    </li>
+                    <li>
+                        <a href="">中宣部内刊纵览</a>
+                    </li>
+                    <li>
+                        <a href="">互动学习交流</a>
+                    </li>
+                    <li>
+                        <a href="">融媒体</a>
+                    </li>
+                    <li>
+                        <a href="">大数据</a>
+                    </li>
+                    <li>
+                        <a href="">资料数据库</a>
+                    </li>
+                    <li>
+                        <a href="">党史上的今天</a>
+                    </li>
+                    <li>
+                        <a href="">机关服务之窗</a>
+                    </li>
+                    <li>
+                        <a href="">地方频道</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="xuan-top">
+        <div class="xuan-text">
+            <div class="xuan-text1">
+                <img src="img/logo.png" />
+            </div>
+            <div class="xuan-text2">
+                <img src="img/user1.png" />
+            </div>
+        </div>
+    </div>
+    <!-- <div class="top">408顶部菜单位置预留</div> -->
+    <div class="vote-content">
+        <div id="explain"></div>
+
+        <div class="content">
+            <!-- <div class="votesItem">
+                <div class="survey-title">
+                    <span class="required">*</span>
+                    <h3>2、您对食堂的就餐环境满意吗？(单选)</h3>
+                </div>
+                <ul id="items2" class="items">
+                    <li class="radio_li">
+                        <i class="icon iconfont icon-circle-outline">
+                            <input class="radio" type="radio" name="one" id="" value="" />
+                        </i>
+                        <label>非常不满意</label>
+                    </li>
+                    <li class="radio_li">
+                        <i class="icon iconfont icon-circle-outline">
+                            <input class="radio" type="radio" name="one" id="" value="" />
+                        </i>
+                        <label>不去</label>
+                    </li>
+                    <li class="radio_li">
+                        <i class="icon iconfont icon-circle-outline">
+                            <input class="radio" type="radio" name="one" id="" value="" />
+                        </i>
+                        <label>一般满意</label>
+                    </li>
+                    <li class="radio_li">
+                        <i class="icon iconfont icon-circle-outline">
+                            <input class="radio" type="radio" name="one" id="" value="" />
+                        </i>
+                        <label>满意</label>
+                    </li>
+                    <li class="radio_li">
+                        <i class="icon iconfont icon-circle-outline">
+                            <input class="radio" type="radio" name="one" id="" value="" />
+                        </i>
+                        <label>非常满意</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="votesItem">
+                <div class="survey-title">
+                    <span class="required">*</span>
+                    <h3>3、选出以下您最喜欢的装修风格:(单选)</h3>
+                </div>
+                <ul id="items3" class="items two">
+
+
+                    <li class="radio_li radio_photo">
+                        <img src="./img/img.png">
+                        <div class="img_warp">
+                            <i class="icon iconfont icon-circle-outline">
+                                <input class="radio" type="radio" name="one" id="" value="" />
+                            </i>
+                            <label>欧式</label>
+                        </div>
+
+                    </li>
+                    <li class="radio_li radio_photo">
+                        <img src="./img/img.png">
+                        <div class="img_warp">
+                            <i class="icon iconfont icon-circle-outline">
+                                <input class="radio" type="radio" name="one" id="" value="" />
+                            </i>
+                            <label>日式</label>
+                        </div>
+                    </li>
+                    <li class="radio_li radio_photo">
+                        <img src="./img/img.png">
+                        <div class="img_warp">
+                            <i class="icon iconfont icon-circle-outline">
+                                <input class="radio" type="radio" name="one" id="" value="" />
+                            </i>
+                            <label>中式</label>
+                        </div>
+                    </li>
+                    <li class="radio_li radio_photo">
+                        <img src="./img/img.png">
+                        <div class="img_warp">
+                            <i class="icon iconfont icon-circle-outline">
+                                <input class="radio" type="radio" name="one" id="" value="" />
+                            </i>
+                            <label>中式复古</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="votesItem">
+                <div class="survey-title">
+                    <span class="required">*</span>
+                    <h3>4、您喜欢哪些菜系？(多选、非必答)</h3>
+                </div>
+                <ul class="items">
+                    <li class="checkbox_li on">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <img src="./img/img.png">
+                        <label>川菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>鲁菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>京味菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>湘菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>其他 请说明(非必填)：</label>
+                        <input class="radio" type="text" class="only" id="" value="" onkeyup="checknum()" />
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>其他 请说明(非必填)：</label>
+                        <input class="radio" type="text" class="double" id="" value="" />
+                    </li>
+                </ul>
+            </div>
+            <div class="votesItem">
+                <div class="survey-title">
+                    <span class="required">*</span>
+                    <h3>5、大于等于9的时候双联排列(多选、非必答)</h3>
+                </div>
+                <ul class="items two">
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>川菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>川菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>字数特别多的话支持回行，回行的样式间距长度什么的都在这里，字数占位</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>川菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>川菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>川菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>川菜</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>字数特别多的话支持回行，回行的样式间距长度什么的都在这里，字数占位</label>
+                    </li>
+                    <li class="checkbox_li">
+                        <span class="checkbox_warp">
+                            <input class="radio" type="checkbox" name="double" id="" value="" />
+                        </span>
+                        <label>川菜</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="votesItem">
+                <div class="survey-title">
+                    <span class="required">*</span>
+                    <h3>6、您对员工食堂还有哪些建议？(非必答)</h3>
+                </div>
+                <textarea rows="3"></textarea>
+            </div>
+            <div class="votesItem">
+                <div class="survey-title">
+                    <span class="required">*</span>
+                    <h3>7、请填写您的人人基本信息</h3>
+                </div>
+                <ul class="items blank">
+                    <li>
+                        <span class="required">*</span>
+                        <label>部门：</label>
+                        <input class="radio" type="text" id="" value="" />
+                    </li>
+                    <li>
+                        <span class="required">*</span>
+                        <label>职务：</label>
+                        <input class="radio" type="text" id="" value="" />
+                    </li>
+                    <li>
+                        <label>姓名(非必填)：</label>
+                        <input class="radio" class="name" type="text" id="" value="" />
+                    </li>
+                </ul>
+
+            </div> -->
+        </div>
+        <span id="btn" class="button">点此查看结果</span>
+
+    </div>
+
+    <div class="footer"></div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
