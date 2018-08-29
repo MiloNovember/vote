@@ -1,6 +1,6 @@
-/*TMODJS:{"version":864,"md5":"56101ce5016233cab82192f5e746d3f2"}*/
+/*TMODJS:{"version":885,"md5":"eb662770367b81ada72fa611f494f2ea"}*/
 template('content',function($data,$filename
-) {
+/*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$each(questionList,function(item,index){
 $out+='  ';
 if(item.type=='1'&&item.multiSelect=='0'){
@@ -22,33 +22,27 @@ $out+='  ';
 if(!option.url){
 $out+='  ';
 if(!option.questionPart){
-$out+=' <li class="radio_li"> ';
-if(!option.defaultSelect){
-$out+=' <i class="icon iconfont icon-circle-outline"> <input class="radio" type="radio" name="one" id="" value="" data-questionPartId=';
+$out+=' <li class="radio_li"> <i class="icon iconfont icon-circle-outline ';
+$out+=$escape(option.defaultSelect?'icon-yuan':'');
+$out+='"> <input class="radio ';
+$out+=$escape(option.defaultSelect?'sele':'');
+$out+='" type="radio" name="one" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
-$out+=' /> </i> ';
-}else{
-$out+=' <i class="icon iconfont icon-circle-outline icon-yuan"> <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId=';
-$out+=$escape(option.id);
-$out+=' data-questionId=';
-$out+=$escape(item.id);
-$out+=' /> </i> ';
-}
-$out+=' <label>';
+$out+=' /> </i> <label>';
 $out+=$escape(option.content);
 $out+='</label> </li> ';
 }else{
 $out+='  <li class="radio_li"> ';
 if(!option.defaultSelect){
-$out+=' <i class="icon iconfont icon-circle-outline"> <input class="radio" type="radio" name="one" id="" value="" data-questionPartId=';
+$out+=' <i class="icon iconfont icon-circle-outline"> <input class="radio" type="radio" name="one" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
 $out+=' /> </i> ';
 }else{
-$out+=' <i class="icon iconfont icon-circle-outline icon-yuan"> <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId=';
+$out+=' <i class="icon iconfont icon-circle-outline icon-yuan"> <input class="radio sele" type="radio" name="one" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
@@ -81,13 +75,13 @@ $out+=' <li class="radio_li radio_photo"> <img src="';
 $out+=$escape(option.url);
 $out+='"> <div class="img_warp"> ';
 if(!option.defaultSelect){
-$out+=' <i class="icon iconfont icon-circle-outline"> <input class="radio" type="radio" name="one" id="" value="" data-questionPartId=';
+$out+=' <i class="icon iconfont icon-circle-outline"> <input class="radio" type="radio" name="one" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
 $out+=' /> </i> ';
 }else{
-$out+=' <i class="icon iconfont icon-circle-outline icon-yuan"> <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId=';
+$out+=' <i class="icon iconfont icon-circle-outline icon-yuan"> <input class="radio sele" type="radio" name="one" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
@@ -180,7 +174,7 @@ $out+='  ';
 if(!option.defaultSelect){
 $out+=' <li class="checkbox_li fl"> <img src="';
 $out+=$escape(option.url);
-$out+='"> <div class="fuck"> <span class="checkbox_warp"> <input type="checkbox" name="double" id="" value="" data-questionPartId=';
+$out+='"> <div class="fuck"> <span class="checkbox_warp"> <input type="checkbox" name="double" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
@@ -200,7 +194,7 @@ $out+='/> </div> </li> ';
 }else{
 $out+=' <li class="checkbox_li on fl"> <img src="';
 $out+=$escape(option.url);
-$out+='"> <div class="fuck"> <span class="checkbox_warp"> <input type="checkbox" class="sele" name="double" id="" value="" data-questionPartId=';
+$out+='"> <div class="fuck"> <span class="checkbox_warp"> <input type="checkbox" class="sele" name="double" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
@@ -244,7 +238,7 @@ $out+=' ';
 }else{
 $out+='  ';
 if(!option.defaultSelect){
-$out+=' <li class="checkbox_li"> <span class="checkbox_warp"> <input type="checkbox" name="double" id="" value="" data-questionPartId=';
+$out+=' <li class="checkbox_li"> <span class="checkbox_warp"> <input type="checkbox" name="double" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);
@@ -265,7 +259,7 @@ $out+=' data-questionId=';
 $out+=$escape(item.id);
 $out+=' />  </li> ';
 }else{
-$out+=' <li class="checkbox_li on"> <span class="checkbox_warp"> <input type="checkbox" class="sele" name="double" id="" value="" data-questionPartId=';
+$out+=' <li class="checkbox_li on"> <span class="checkbox_warp"> <input type="checkbox" class="sele" name="double" value="" data-questionPartId=';
 $out+=$escape(option.id);
 $out+=' data-questionId=';
 $out+=$escape(item.id);

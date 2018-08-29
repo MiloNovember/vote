@@ -6,7 +6,7 @@
                 {{if !!item.required}}
                 <span class="required">*</span>
                 {{/if}}
-                <h3>{{index+1}}、{{item.title}}(单选)</h3>
+                    <h3>{{index+1}}、{{item.title}}(单选)</h3>
             </div>
             <ul id="items" class="items">
                 {{each item.questionPartList as option index}}
@@ -15,34 +15,25 @@
                         <!-- 选项里没有填空 -->
                         {{if !option.questionPart}} 
                             <li class="radio_li">
-                                {{if !option.defaultSelect}}
-                                    <i class="icon iconfont icon-circle-outline">
-                                        <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
-                                    </i>
-                                    
-                                {{else}}
-                                    <i class="icon iconfont icon-circle-outline icon-yuan">
-                                        <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
-                                    </i>
-                                {{/if}}
+                                <i class="icon iconfont icon-circle-outline {{option.defaultSelect?'icon-yuan':''}}">
+                                    <input class="radio {{option.defaultSelect?'sele':''}}" type="radio" name="one" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                </i>
                                 <label>{{option.content}}</label>
                             </li>       
                         {{else}}
                         <!-- 选项里有填空 -->
-                           
                             <li class="radio_li">
                                 {{if !option.defaultSelect}}
                                     <i class="icon iconfont icon-circle-outline">
-                                        <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                        <input class="radio" type="radio" name="one" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                                     </i>
                                 {{else}}
                                     <i class="icon iconfont icon-circle-outline icon-yuan">
-                                        <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                        <input class="radio sele" type="radio" name="one" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                                     </i>
                                 {{/if}}
                                 {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label>{{option.content}}{{option.questionPart.content}}：</label><input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" class="only sele" type="text" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
                             </li>
-                            
                         {{/if}}
                     {{/if}}
                     
@@ -55,11 +46,11 @@
                                     <div class="img_warp">
                                         {{if !option.defaultSelect}}
                                             <i class="icon iconfont icon-circle-outline">
-                                                <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                                <input class="radio" type="radio" name="one" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                                             </i>
                                         {{else}}
                                             <i class="icon iconfont icon-circle-outline icon-yuan">
-                                                <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                                <input class="radio sele" type="radio" name="one" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                                             </i>
                                         {{/if}}
                                         <label>{{option.content}}</label>
@@ -132,7 +123,7 @@
                         <img src="{{option.url}}">
                         <div class="fuck">
                             <span class="checkbox_warp">
-                                <input type="checkbox" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                <input type="checkbox" name="double" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                             </span>
                              {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label class="sb">其他 请说明(非必填)：</label>
                             <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" type="text" class="only sele" id="" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}}/>
@@ -143,7 +134,7 @@
                             <img src="{{option.url}}">
                             <div class="fuck">
                                 <span class="checkbox_warp">
-                                    <input type="checkbox" class="sele" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                    <input type="checkbox" class="sele" name="double" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                                 </span>
                                 {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label class="sb">其他 请说明：</label>
                                 <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" type="text" class="only sele" id="" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
@@ -178,7 +169,7 @@
                             {{if !option.defaultSelect}}
                                 <li class="checkbox_li">
                                     <span class="checkbox_warp">
-                                        <input type="checkbox" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                        <input type="checkbox" name="double" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                                     </span>
                                     {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label>{{option.content}}{{option.questionPart.content}}：</label>
                                     <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" class="only sele" type="text" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />
@@ -187,7 +178,7 @@
                             {{else}}
                                 <li class="checkbox_li on">
                                     <span class="checkbox_warp">
-                                        <input type="checkbox" class="sele" name="double" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                        <input type="checkbox" class="sele" name="double" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
                                     </span>
                                     {{if !!option.mustSelect}}<span style="opacity:0" class="required">*</span>{{/if}}<label>{{option.content}}{{option.questionPart.content}}：</label>
                                     <input onblur="yanzheng({{option.questionPart.verification}},{{option.mustSelect}}, this)" class="only sele" type="text" value="" data-questionPartId={{option.questionPart.id}} data-questionId={{item.id}} />

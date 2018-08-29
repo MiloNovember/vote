@@ -22,13 +22,13 @@ Explain.prototype = {
         type: "GET",
         jsonp: "callback",
         dataType: "jsonp",
-        url: getData_url+"/vote/api/getQuesInfoByQuesId",
+        url: getData_url+"/vote/vote/api/getQuesInfoByQuesId",
         data:{
             questionnaireId:voteId
         }
       })
       .then(function(response) {
-          //console.log(response.data);
+          console.log('response:',response.data);
           _this.voteTitle=response.data.quesInfoByQuesId.title;
           if(response.data.isAnwserQues||response.data.quesInfoByQuesId.delFlag==1){
               window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId;
@@ -138,7 +138,7 @@ Explain.prototype = {
                     data:JSON.stringify(dataArr),
                     error: function(err) {
                         console.log(err);
-                      }
+                    }
                 }).done(function(response){
                     console.log(response);
                     window.location.href='./end.html?title='+_this.voteTitle+'&id='+voteId;
