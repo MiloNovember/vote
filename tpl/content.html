@@ -6,7 +6,7 @@
                 {{if !!item.required}}
                 <span class="required">*</span>
                 {{/if}}
-                    <h3>{{index+1}}、{{item.title}}(单选)</h3>
+                <h3>{{index+1}}、{{item.title}}(单选)</h3> <!--style="{{(item.required)?'color:red;':''}}"-->
             </div>
             <ul id="items" class="items">
                 {{each item.questionPartList as option index}}
@@ -62,9 +62,9 @@
                                     <img src="{{option.url}}">
                                     <div class="img_warp">
                                         {{if !option.defaultSelect}}
-                                        <i class="icon iconfont icon-circle-outline">
-                                            <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
-                                        </i>
+                                            <i class="icon iconfont icon-circle-outline">
+                                                <input class="radio" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />
+                                            </i>
                                         {{else}}
                                             <i class="icon iconfont icon-circle-outline icon-yuan">
                                                 <input class="radio sele" type="radio" name="one" id="" value="" data-questionPartId={{option.id}} data-questionId={{item.id}} />

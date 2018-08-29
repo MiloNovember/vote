@@ -117,37 +117,38 @@ Explain.prototype = {
         $('.required1').each(function(key, item){
             validate = validate && ($(item).find('.sele').length>0);
           });//保证必答题都答了
-            console.log(validate);
             var mustwrit=$('.required1 .items .required').length==$('.required1 .items .ww').length;//
-            console.log(mustwrit);
+            console.log(validate, mustwrit);
+            
             if(validate&&mustwrit){
                 $('.sele').each(function(key,item){
                     //console.log(item);
                     dataArr.push({
-                      "questionnaireId":voteId,
-                      "questionPartId": $(item).attr('data-questionPartId'),
-                      "questionId": $(item).attr('data-questionId'),
-                      "answerContent": $(item).val()
+                        "questionnaireId":voteId,
+                        "questionPartId": $(item).attr('data-questionPartId'),
+                        "questionId": $(item).attr('data-questionId'),
+                        "answerContent": $(item).val()
                     })
                 });
                 console.log(dataArr);
-                $.ajax({
-                    type:'POST',
-                    contentType:'application/json',
-                    url:getData_url+'/vote/api/submitQuestionnaire',
-                    data:JSON.stringify(dataArr),
-                    error: function(err) {
-                        console.log(err);
-                    }
-                }).done(function(response){
-                    console.log(response);
-                    window.location.href='./end.html?title='+_this.voteTitle+'&id='+voteId;
-                })
+                // $.ajax({
+                //     type:'POST',
+                //     contentType:'application/json',
+                //     url:getData_url+'/vote/api/submitQuestionnaire',
+                //     data:JSON.stringify(dataArr),
+                //     error: function(err) {
+                //         console.log(err);
+                //     }
+                // }).done(function(response){
+                //     console.log(response);
+                //     window.location.href='./end.html?title='+_this.voteTitle+'&id='+voteId;
+                // })
             }else{
                 alert('请您按要求完成问卷')
+                console.log(dataArr);
             }
-          
-        //   console.log(dataArr);
+
+            //   console.log(dataArr);
       })
   }
 
@@ -255,7 +256,6 @@ function yanzheng(verification,mustSelect, target){
           target.previousElementSibling.previousElementSibling.classList.add('ww');
       }
   }else{
-      
       return false;
   }
 }

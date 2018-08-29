@@ -1,4 +1,4 @@
-/*TMODJS:{"version":885,"md5":"eb662770367b81ada72fa611f494f2ea"}*/
+/*TMODJS:{"version":907,"md5":"eac3c583281177e8ec4a7d3ab8a6a855"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$each(questionList,function(item,index){
@@ -16,7 +16,9 @@ $out+=' <h3>';
 $out+=$escape(index+1);
 $out+='、';
 $out+=$escape(item.title);
-$out+='(单选)</h3> </div> <ul id="items" class="items"> ';
+$out+='(单选)</h3> <!--style="';
+$out+=$escape((item.required)?'color:red;':'');
+$out+='"--> </div> <ul id="items" class="items"> ';
 $each(item.questionPartList,function(option,index){
 $out+='  ';
 if(!option.url){
