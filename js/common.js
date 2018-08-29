@@ -25,7 +25,7 @@ function hide() {
                 var res = response.data;
                 var str='';
                 for (var i = 0; i < res.length; i++) {
-                    str += `<li><a target="__blank" href="${nav_url+res[i].url}">${res[i].title}</a></li>`
+                    str += '<li><a target="__blank" href="${nav_url+res[i].url}">${res[i].title}</a></li>'
                 }
                 console.log()
                 $('#navItem').html(str);
