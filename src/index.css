@@ -112,9 +112,9 @@ input{
     display: inline-block;
     width: 14px;
     height: 14px;
-    opacity: 0; 
+    opacity: 0;
     position: absolute;
-    left: -2px;
+    left: 0;
     top: 0;
     filter:alpha(opacity=0);
 }
@@ -200,7 +200,7 @@ input{
     width: 80%;
     height: auto;
 }
-.button{
+.layui-btn.button{
     height:45px;
     width:400px;
     margin:0 auto;
@@ -211,7 +211,7 @@ input{
     line-height: 45px;
     margin-top:50px;
     margin-bottom:50px;
-    display: block;
+    display: block !important;
     background: #D43E42;
     cursor: pointer;
 }

@@ -106,7 +106,7 @@ Explain.prototype = {
     }else if(this.res.colour==2){
       this.cssScr.href="./src/red.css";
     }else{
-      this.cssScr.href="./src/gray.css";
+      this.cssScr.href="./src/red.css";
     }
   },
   clickSubmit:function(){
@@ -144,7 +144,10 @@ Explain.prototype = {
                 //     window.location.href='./end.html?title='+_this.voteTitle+'&id='+voteId;
                 // })
             }else{
-                alert('请您按要求完成问卷')
+                layer.open({
+                    title: '提示'
+                    ,content: '请您按要求完成问卷'
+                });
                 console.log(dataArr);
             }
 
