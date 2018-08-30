@@ -1,10 +1,13 @@
 // layUI模块化引入
-layui.use(['layer', 'form'], function(){
-    var layer = layui.layer,
-        form = layui.form
+var form = null
 
-    form.on('submit', function(data){
+layui.use(['layer', 'form'], function(){
+    var layer = layui.layer
+    form = layui.form
+
+    form.on('submit(*)', function(data){
         console.log(data);
+        // console.log(JSON.stringify(data.field));
         return false;
     });
 
@@ -12,3 +15,6 @@ layui.use(['layer', 'form'], function(){
         console.log(data);
     });
 });
+
+
+

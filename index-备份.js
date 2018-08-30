@@ -30,14 +30,13 @@ Explain.prototype = {
       .then(function(response) {
           console.log('response:',response.data);
           _this.voteTitle=response.data.quesInfoByQuesId.title;
-
           if(response.data.isAnwserQues||response.data.quesInfoByQuesId.delFlag==1){
               window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId;
           }else{
               _this.res = response.data.quesInfoByQuesId;
               var voteName=document.getElementById('voteName');
               voteName.innerHTML=_this.res.title;
-              // console.log(voteName);
+                console.log(voteName);
           }
         
       });
@@ -58,17 +57,14 @@ Explain.prototype = {
       questionList: questionList
     });
     $(".content").html(html);
-    // var ids=[];
-    // $('.votesItem[id]','.content').each(function(key,item){
-    //   return ids.push(item.id);
-    // })
-    // for(var i=0; i<ids.length; i++){
-    //   this.singleElection(ids[i]);
-    // }
+    var ids=[];
+    $('.votesItem[id]','.content').each(function(key,item){
+      return ids.push(item.id);
+    })
+    for(var i=0; i<ids.length; i++){
+      this.singleElection(ids[i]);
+    }
 
-    setTimeout(function () {
-        form.render(); //更新全部layUI
-    },30)
   },
   singleElection: function(id) {
     var items = document.getElementById(id);
@@ -114,7 +110,11 @@ Explain.prototype = {
     }
   },
   clickSubmit:function(){
-      /*var _this=this;
+      setTimeout(function () {
+          form.render(); //更新全部layUI
+      }, 10)
+
+      var _this=this;
       var dataArr=[];
       $('#btn').click(function(){
         var validate = true;
@@ -156,7 +156,7 @@ Explain.prototype = {
             }
 
             //   console.log(dataArr);
-      })*/
+      })
   }
 
 };

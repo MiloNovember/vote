@@ -1,0 +1,47 @@
+/*lay-ui 修改样式*/
+.layui-form .layui-input-block {
+    margin-left: 0;
+    max-width: 800px;
+}
+
+.layui-form .layui-input-block .box {
+    display: inline-block;
+    margin: 0 50px 20px 0;
+}
+
+.layui-form .layui-form-label {
+    width: 100%;
+    text-align: left;
+}
+/*lay-ui 修改样式*/
+.layui-form .layui-form-radioed>i {
+    color: red;
+}
+
+.layui-form .layui-form-radio>i:hover {
+    color: red;
+}
+
+.layui-form-item label {
+    font-size: 16px;
+    color: #222;
+}
+
+.layui-form-item .layui-form-radio>i {
+    font-size: 16px;
+}
+
+.layui-form-item .layui-form-radio {
+    display: block;
+    margin-left: 36px;
+}
+
+.layui-form .layui-form-radio * {
+    font-size: 12px;
+}
+
+.layui-form-item img {
+    width: 240px;
+    height: 160px;
+    margin-left: 36px;
+}
