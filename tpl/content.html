@@ -5,7 +5,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">
                 <span class="required">{{!!item.required?'* ':'&nbsp;&nbsp;'}}</span>
-                {{index+1}}、{{item.title}}(单选)
+                {{index+1}}、{{item.title}}（单选{{!item.required?'，非必答':''}}）
             </label>
             <div class="layui-input-block">
                 {{each item.questionPartList as option index}}
@@ -13,7 +13,14 @@
                     {{if !!option.url}}
                     <img src="{{option.url}}" alt="">
                     {{/if}}
-                    <input type="radio" name="{{item.id}}" value="{{option.id}}" title="{{option.content}}">
+                    {{if !!option.defaultSelect}}
+                    <input type="radio" req="{{item.required}}" name="{{item.id}}" value="{{option.id}}" title="{{option.content}}{{!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':''}}" checked>
+                    {{else}}
+                    <input type="radio" req="{{item.required}}" name="{{item.id}}" value="{{option.id}}" title="{{option.content}}{{!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':''}}">
+                    {{/if}}
+                    {{if !!option.questionPart}}
+                    <input type="text" name="{{item.id}}" value="" placeholder="" autocomplete="off" class="layui-input inline-block option-input {{!!option.questionPart&&!!option.mustSelect?'ml-36':''}}">
+                    {{/if}}
                 </div>
                 {{/each}}
             </div>
@@ -25,7 +32,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">
                 <span class="required">{{!!item.required?'* ':'&nbsp;&nbsp;'}}</span>
-                {{index+1}}、{{item.title}}(多选)
+                {{index+1}}、{{item.title}}（多选{{!item.required?'，非必答':''}}）
             </label>
             <div class="layui-input-block">
                 {{each item.questionPartList as option index}}
@@ -33,7 +40,14 @@
                     {{if !!option.url}}
                     <img src="{{option.url}}" alt="">
                     {{/if}}
-                    <input type="checkbox" name="{{item.id}}" value="{{option.id}}" title="{{option.content}}" lay-skin="primary">
+                    {{if !!option.defaultSelect}}
+                    <input type="checkbox" name="{{item.id}}" value="{{option.id}}" title="{{option.content}}{{!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':''}}" lay-skin="primary" checked>
+                    {{else}}
+                    <input type="checkbox" name="{{item.id}}" value="{{option.id}}" title="{{option.content}}{{!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':''}}" lay-skin="primary">
+                    {{/if}}
+                    {{if !!option.questionPart}}
+                    <input type="text" name="{{item.id}}" value="" placeholder="" autocomplete="off" class="layui-input inline-block option-input {{!!option.questionPart&&!!option.mustSelect?'ml-36':''}}">
+                    {{/if}}
                 </div>
                 {{/each}}
             </div>
@@ -45,8 +59,13 @@
         <div class="layui-form-item">
             <label class="layui-form-label">
                 <span class="required">{{!!item.required?'* ':'&nbsp;&nbsp;'}}</span>
-                {{index+1}}、{{item.title}}
+                {{index+1}}、{{item.title}}{{!item.required?'（非必答）':''}}
             </label>
+            {{if item.questionPartList.length==1}}
+                {{each item.questionPartList as option index}}
+                <textarea name="{{option.id}}" placeholder="" rows="3" class="layui-textarea" required  lay-verify="{{!!option.mustSelect?'required':''}}" lay-verType="alert"></textarea>
+                {{/each}}
+            {{else}}
             <div class="layui-input-block fill-blanks">
                 {{each item.questionPartList as option index}}
                 <div class="fill-blanks-box">
@@ -55,10 +74,11 @@
                     {{else}}
                     &nbsp;
                     {{/if}}
-                    <span>{{option.content}}：</span><input type="text" name="title" required  lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                    <span>{{option.content}}{{!option.mustSelect?'（非必填）':''}}：</span><input type="text" name="{{option.id}}" required  lay-verify="{{!!option.mustSelect?'required':''}}" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input">
                 </div>
                 {{/each}}
             </div>
+            {{/if}}
         </div>
         {{/if}}
     {{/each}}
