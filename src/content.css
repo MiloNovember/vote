@@ -1,3 +1,7 @@
+.required{
+    color: #C40202;
+}
+
 /*lay-ui 修改样式*/
 .layui-form .layui-input-block {
     margin-left: 0;
@@ -9,17 +13,15 @@
     margin: 0 50px 20px 0;
 }
 
+.layui-form .layui-input-block .box2 {
+    display: inline-block;
+    width: 240px;
+    margin: 0 80px 20px 0;
+}
+
 .layui-form .layui-form-label {
     width: 100%;
     text-align: left;
-}
-/*lay-ui 修改样式*/
-.layui-form .layui-form-radioed>i {
-    color: red;
-}
-
-.layui-form .layui-form-radio>i:hover {
-    color: red;
 }
 
 .layui-form-item label {
@@ -36,8 +38,36 @@
     margin-left: 36px;
 }
 
+.layui-form-item .layui-form-checkbox {
+    margin-left: 36px;
+}
+.layui-form-item .layui-form-checkbox span {
+    font-size: 12px;
+}
+.layui-form-item .layui-form-checkbox[lay-skin=primary] span {
+    color: #222;
+}
+
 .layui-form .layui-form-radio * {
     font-size: 12px;
+}
+
+.layui-form .layui-form-checkbox[lay-skin=primary] i {
+    width: 10px;
+    height: 10px;
+    font-size: 12px;
+    line-height: 10px;
+    margin-top: 2px;
+}
+.layui-form .layui-form-checkbox[lay-skin=primary] i:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -3px 0 0 -3px;
+    width: 6px;
+    height: 6px;
+    background: #fff;
 }
 
 .layui-form-item img {
@@ -45,3 +75,19 @@
     height: 160px;
     margin-left: 36px;
 }
+
+.fill-blanks input {
+    display: inline-block;
+    width: 305px;
+    margin-left: 10px;
+    height:24px;
+    background: #fff;
+    border: 1px solid #C5C5C5;
+    border-radius: 2px;
+    behavior: url("./PIE.htc");
+}
+
+.fill-blanks .fill-blanks-box {
+    margin: 0 0 15px 40px;
+}
+

@@ -19,3 +19,23 @@
 .button{
     background: #2A95CB;
 }
+
+/*lay-ui 修改样式*/
+/*开始 颜色*/
+.layui-form .layui-form-radioed>i {
+    color: #2A95CB;
+}
+
+.layui-form .layui-form-radio>i:hover {
+    color: #2A95CB;
+}
+
+.layui-form-item .layui-form-checked[lay-skin=primary] i {
+    border-color: #2A95CB;
+    background-color: #2A95CB;
+}
+
+.layui-form-item .layui-form-checkbox[lay-skin=primary]:hover i  {
+    border-color: #2A95CB;
+}
+/*结束 颜色*/

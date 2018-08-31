@@ -24,7 +24,7 @@ Explain.prototype = {
         dataType: "jsonp",
         url: getData_url+"/vote/vote/api/getQuesInfoByQuesId",
         data:{
-            questionnaireId:voteId
+            questionnaireId: 86//voteId
         }
       })
       .then(function(response) {

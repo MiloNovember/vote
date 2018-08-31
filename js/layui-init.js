@@ -12,7 +12,7 @@ layui.use(['layer', 'form'], function(){
     });
 
     form.on('radio', function(data){
-        console.log(data);
+        // console.log(data);
     });
 });
 
