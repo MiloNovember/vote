@@ -1,11 +1,13 @@
-/*TMODJS:{"version":1079,"md5":"df0d32261b11f600dc5d5a1314022bea"}*/
+/*TMODJS:{"version":1082,"md5":"8e70ac84a851c2caad660a478ead7ffe"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
 $each(questionList,function(item,index){
 $out+='  ';
 if(item.type=='1'&&item.multiSelect=='0'){
-$out+=' <div class="layui-form-item"> <label class="layui-form-label"> <span class="required">';
+$out+=' <div class="layui-form-item ';
+$out+=$escape(!!item.required?'single-selection-req':'');
+$out+='"> <label class="layui-form-label"> <span class="required">';
 $out+=$escape(!!item.required?'* ':'&nbsp;&nbsp;');
 $out+='</span> ';
 $out+=$escape(index+1);
