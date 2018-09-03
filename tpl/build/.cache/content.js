@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1082,"md5":"8e70ac84a851c2caad660a478ead7ffe"}*/
+/*TMODJS:{"version":1103,"md5":"ae84874afe214a0691068f9c9f258fe6"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
@@ -27,9 +27,7 @@ $out+='" alt=""> ';
 }
 $out+=' ';
 if(!!option.defaultSelect){
-$out+=' <input type="radio" req="';
-$out+=$escape(item.required);
-$out+='" name="';
+$out+=' <input type="radio" name="';
 $out+=$escape(item.id);
 $out+='" value="';
 $out+=$escape(option.id);
@@ -38,9 +36,7 @@ $out+=$escape(option.content);
 $out+=$escape(!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':'');
 $out+='" checked> ';
 }else{
-$out+=' <input type="radio" req="';
-$out+=$escape(item.required);
-$out+='" name="';
+$out+=' <input type="radio" name="';
 $out+=$escape(item.id);
 $out+='" value="';
 $out+=$escape(option.id);
@@ -130,7 +126,9 @@ $out+=' <textarea name="';
 $out+=$escape(option.id);
 $out+='" placeholder="" rows="3" class="layui-textarea" required lay-verify="';
 $out+=$escape(!!option.mustSelect?'required':'');
-$out+='" lay-verType="alert"></textarea> ';
+$out+='|';
+$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identity':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'number':option.verification==7?'email':option.verification==8?'url':'');
+$out+='" lay-verType="tips"></textarea> ';
 });
 $out+=' ';
 }else{
@@ -149,7 +147,9 @@ $out+='：</span><input type="text" name="';
 $out+=$escape(option.id);
 $out+='" required lay-verify="';
 $out+=$escape(!!option.mustSelect?'required':'');
-$out+='" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input"> </div> ';
+$out+='|';
+$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identity':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'number':option.verification==7?'email':option.verification==8?'url':'');
+$out+='" lay-verType="tips" placeholder="" autocomplete="off" class="layui-input"> </div> ';
 });
 $out+=' </div> ';
 }
