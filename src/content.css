@@ -11,30 +11,31 @@
 .layui-form .layui-input-block .box {
     display: inline-block;
     width: 240px;
-    margin: 0 80px 20px 0;
+    margin: 0 120px 20px 36px;
+    vertical-align: top;
 }
 
-.layui-form .layui-input-block .box .option-input {
+.layui-form .layui-input-block .option-input {
     position: relative;
     top: 3px;
     color: #222;
     font-size: 12px;
-}
-
-.layui-form .layui-input-block .box2 {
     display: inline-block;
-    width: 240px;
-    margin: 0 80px 20px 0;
 }
 
-.layui-form .layui-input-block .box2 .option-input {
+.layui-form .layui-input-block .option-textarea {
     position: relative;
-    top: 3px;
+    top: 30px;
     color: #222;
     font-size: 12px;
+    display: inline-block;
+    margin-left: 10px;
 }
 
 .layui-form .option-input.ml-36 {
+    margin-left: 36px;
+}
+.layui-form .ml-36 {
     margin-left: 36px;
 }
 
@@ -54,12 +55,8 @@
 
 .layui-form-item .layui-form-radio {
     display: inline-block;
-    margin-left: 36px;
 }
 
-.layui-form-item .layui-form-checkbox {
-    margin-left: 36px;
-}
 .layui-form-item .layui-form-checkbox span {
     font-size: 12px;
 }
@@ -92,7 +89,6 @@
 .layui-form-item img {
     width: 240px;
     height: 160px;
-    margin-left: 36px;
 }
 
 .layui-form-item input {
@@ -118,11 +114,11 @@
 }
 
 .fill-blanks .fill-blanks-box {
-    margin: 0 0 15px 40px;
+    margin: 0 0 15px 25px;
 }
 
-.inline-block {
-    display: inline-block;
+.layui-form-item .is-long {
+    width: 220px;
 }
 
 .layui-form-item input {
@@ -133,5 +129,17 @@
     font-size: 12px;
     width: 355px;
     margin-left: 36px;
+}
+
+.layui-form .layui-form-label {
+    padding: 9px 0;
+}
+
+.layui-form .layui-textarea {
+    min-height: 0;
+}
+
+.layui-form .layui-form-item {
+    margin-bottom: 30px;
 }
 

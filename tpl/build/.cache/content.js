@@ -1,24 +1,25 @@
-/*TMODJS:{"version":1103,"md5":"ae84874afe214a0691068f9c9f258fe6"}*/
+/*TMODJS:{"version":1157,"md5":"d1da323316300a105fbf6c0e6c4bd7be"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
 $each(questionList,function(item,index){
 $out+='  ';
-if(item.type=='1'&&item.multiSelect=='0'){
+if(item.type=='1'){
 $out+=' <div class="layui-form-item ';
-$out+=$escape(!!item.required?'single-selection-req':'');
+$out+=$escape(!!item.required?'selection-req':'');
 $out+='"> <label class="layui-form-label"> <span class="required">';
 $out+=$escape(!!item.required?'* ':'&nbsp;&nbsp;');
 $out+='</span> ';
 $out+=$escape(index+1);
 $out+='、';
 $out+=$escape(item.title);
-$out+='（单选';
+$out+='（';
+$out+=$escape(item.multiSelect=='0'?'单选':'多选');
 $out+=$escape(!item.required?'，非必答':'');
 $out+='） </label> <div class="layui-input-block"> ';
 $each(item.questionPartList,function(option,index){
 $out+=' <div class="';
-$out+=$escape(!!option.url?'box':'');
+$out+=$escape(!!option.url?'box':'ml-36');
 $out+='"> ';
 if(!!option.url){
 $out+=' <img src="';
@@ -27,71 +28,31 @@ $out+='" alt=""> ';
 }
 $out+=' ';
 if(!!option.defaultSelect){
-$out+=' <input type="radio" name="';
+$out+=' <input type="';
+$out+=$escape(item.multiSelect=='0'?'radio':'checkbox');
+$out+='" name="';
 $out+=$escape(item.id);
-$out+='" value="';
+$out+='" questionId="';
+$out+=$escape(item.id);
+$out+='" questionPartId="';
 $out+=$escape(option.id);
-$out+='" title="';
-$out+=$escape(option.content);
-$out+=$escape(!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':'');
-$out+='" checked> ';
-}else{
-$out+=' <input type="radio" name="';
-$out+=$escape(item.id);
-$out+='" value="';
-$out+=$escape(option.id);
-$out+='" title="';
-$out+=$escape(option.content);
-$out+=$escape(!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':'');
-$out+='"> ';
-}
-$out+=' ';
-if(!!option.questionPart){
-$out+=' <input type="text" name="';
-$out+=$escape(item.id);
-$out+='" value="" placeholder="" autocomplete="off" class="layui-input inline-block option-input ';
-$out+=$escape(!!option.questionPart&&!!option.mustSelect?'ml-36':'');
-$out+='"> ';
-}
-$out+=' </div> ';
-});
-$out+=' </div> </div> ';
-}
-$out+='  ';
-if(item.type=='1'&&item.multiSelect=='1'){
-$out+=' <div class="layui-form-item"> <label class="layui-form-label"> <span class="required">';
-$out+=$escape(!!item.required?'* ':'&nbsp;&nbsp;');
-$out+='</span> ';
-$out+=$escape(index+1);
-$out+='、';
-$out+=$escape(item.title);
-$out+='（多选';
-$out+=$escape(!item.required?'，非必答':'');
-$out+='） </label> <div class="layui-input-block"> ';
-$each(item.questionPartList,function(option,index){
-$out+=' <div class="';
-$out+=$escape(!!option.url?'box2':'');
-$out+='"> ';
-if(!!option.url){
-$out+=' <img src="';
-$out+=$escape(option.url);
-$out+='" alt=""> ';
-}
-$out+=' ';
-if(!!option.defaultSelect){
-$out+=' <input type="checkbox" name="';
-$out+=$escape(item.id);
-$out+='" value="';
-$out+=$escape(option.id);
+$out+='" isFitb="';
+$out+=$escape(!!option.questionPart?1:0);
 $out+='" title="';
 $out+=$escape(option.content);
 $out+=$escape(!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':'');
 $out+='" lay-skin="primary" checked> ';
 }else{
-$out+=' <input type="checkbox" name="';
+$out+=' <input type="';
+$out+=$escape(item.multiSelect=='0'?'radio':'checkbox');
+$out+='" name="';
 $out+=$escape(item.id);
-$out+='" value="';
+$out+='" questionId="';
+$out+=$escape(item.id);
+$out+='" questionPartId="';
 $out+=$escape(option.id);
+$out+='" isFitb="';
+$out+=$escape(!!option.questionPart?1:0);
 $out+='" title="';
 $out+=$escape(option.content);
 $out+=$escape(!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':'');
@@ -99,11 +60,41 @@ $out+='" lay-skin="primary"> ';
 }
 $out+=' ';
 if(!!option.questionPart){
-$out+=' <input type="text" name="';
-$out+=$escape(item.id);
-$out+='" value="" placeholder="" autocomplete="off" class="layui-input inline-block option-input ';
-$out+=$escape(!!option.questionPart&&!!option.mustSelect?'ml-36':'');
+$out+=' ';
+if(!option.questionPart.lineNum){
+$out+=' <input type="text" maxlength="';
+$out+=$escape(option.questionPart.maximum);
+$out+='" id="';
+$out+=$escape(option.id);
+$out+='" value="" required lay-verify="';
+$out+=$escape(!!option.questionPart.mustSelect?'required':'');
+$out+='|';
+$out+=$escape(option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':'');
+$out+='" lay-verType="alert" placeholder="';
+$out+=$escape(option.questionPart.content);
+$out+='" autocomplete="off" class="layui-input ';
+$out+=$escape(option.questionPart.maximum>20?'is-long':'');
+$out+=' option-input ';
+$out+=$escape(!!option.mustSelect?'ml-36':'');
 $out+='"> ';
+}else{
+$out+=' <textarea maxlength="';
+$out+=$escape(option.questionPart.maximum);
+$out+='" rows="2" id="';
+$out+=$escape(option.id);
+$out+='" required lay-verify="';
+$out+=$escape(!!option.questionPart.mustSelect?'required':'');
+$out+='|';
+$out+=$escape(option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':'');
+$out+='" lay-verType="alert" placeholder="';
+$out+=$escape(option.questionPart.content);
+$out+='" class="layui-textarea ';
+$out+=$escape(option.questionPart.maximum>20?'is-long':'');
+$out+=' option-textarea ';
+$out+=$escape(!!option.mustSelect?'ml-36':'');
+$out+='"></textarea> ';
+}
+$out+=' ';
 }
 $out+=' </div> ';
 });
@@ -111,28 +102,14 @@ $out+=' </div> </div> ';
 }
 $out+='  ';
 if(item.type=='2'&&item.multiSelect=='0'){
-$out+=' <div class="layui-form-item"> <label class="layui-form-label"> <span class="required">';
+$out+=' <div class="layui-form-item fill-in-the-blank"> <label class="layui-form-label"> <span class="required">';
 $out+=$escape(!!item.required?'* ':'&nbsp;&nbsp;');
 $out+='</span> ';
 $out+=$escape(index+1);
 $out+='、';
 $out+=$escape(item.title);
 $out+=$escape(!item.required?'（非必答）':'');
-$out+=' </label> ';
-if(item.questionPartList.length==1){
-$out+=' ';
-$each(item.questionPartList,function(option,index){
-$out+=' <textarea name="';
-$out+=$escape(option.id);
-$out+='" placeholder="" rows="3" class="layui-textarea" required lay-verify="';
-$out+=$escape(!!option.mustSelect?'required':'');
-$out+='|';
-$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identity':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'number':option.verification==7?'email':option.verification==8?'url':'');
-$out+='" lay-verType="tips"></textarea> ';
-});
-$out+=' ';
-}else{
-$out+=' <div class="layui-input-block fill-blanks"> ';
+$out+=' </label> <div class="layui-input-block fill-blanks"> ';
 $each(item.questionPartList,function(option,index){
 $out+=' <div class="fill-blanks-box"> ';
 if(!!option.mustSelect){
@@ -143,17 +120,37 @@ $out+=' &nbsp; ';
 $out+=' <span>';
 $out+=$escape(option.content);
 $out+=$escape(!option.mustSelect?'（非必填）':'');
-$out+='：</span><input type="text" name="';
+$out+='：</span> ';
+if(!!option.lineNum){
+$out+=' <textarea questionId="';
+$out+=$escape(item.id);
+$out+='" questionPartId="';
 $out+=$escape(option.id);
+$out+='" placeholder="" rows="3" class="layui-textarea" maxlength="';
+$out+=$escape(option.maximum);
 $out+='" required lay-verify="';
 $out+=$escape(!!option.mustSelect?'required':'');
 $out+='|';
-$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identity':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'number':option.verification==7?'email':option.verification==8?'url':'');
-$out+='" lay-verType="tips" placeholder="" autocomplete="off" class="layui-input"> </div> ';
-});
-$out+=' </div> ';
+$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
+$out+='" lay-verType="alert"></textarea> ';
+}else{
+$out+=' <input type="text" name="';
+$out+=$escape(option.id);
+$out+='" questionId="';
+$out+=$escape(item.id);
+$out+='" questionPartId="';
+$out+=$escape(option.id);
+$out+='" maxlength="';
+$out+=$escape(option.maximum);
+$out+='" required lay-verify="';
+$out+=$escape(!!option.mustSelect?'required':'');
+$out+='|';
+$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
+$out+='" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input"> ';
 }
 $out+=' </div> ';
+});
+$out+=' </div> </div> ';
 }
 $out+=' ';
 });

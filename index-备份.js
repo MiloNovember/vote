@@ -110,10 +110,6 @@ Explain.prototype = {
     }
   },
   clickSubmit:function(){
-      setTimeout(function () {
-          form.render(); //更新全部layUI
-      }, 10)
-
       var _this=this;
       var dataArr=[];
       $('#btn').click(function(){
@@ -135,18 +131,18 @@ Explain.prototype = {
                     })
                 });
                 console.log(dataArr);
-                // $.ajax({
-                //     type:'POST',
-                //     contentType:'application/json',
-                //     url:getData_url+'/vote/api/submitQuestionnaire',
-                //     data:JSON.stringify(dataArr),
-                //     error: function(err) {
-                //         console.log(err);
-                //     }
-                // }).done(function(response){
-                //     console.log(response);
-                //     window.location.href='./end.html?title='+_this.voteTitle+'&id='+voteId;
-                // })
+                $.ajax({
+                    type:'POST',
+                    contentType:'application/json',
+                    url:getData_url+'/vote/api/submitQuestionnaire',
+                    data:JSON.stringify(dataArr),
+                    error: function(err) {
+                        console.log(err);
+                    }
+                }).done(function(response){
+                    console.log(response);
+                    window.location.href='./end.html?title='+_this.voteTitle+'&id='+voteId;
+                })
             }else{
                 layer.open({
                     title: '提示'

@@ -1,6 +1,6 @@
 var nav_url = 'http://10.3.38.235/';
 var getNav_url = 'http://10.3.38.235:8081';
-var getData_url = 'http://10.3.39.153:8081';
+var getData_url = 'http://10.3.39.153:8085';
 
 
 function show() {
@@ -21,13 +21,14 @@ function hide() {
             url: getNav_url + "/api/front/category/getCategoryList"
         })
         .then(function (response) {
+            // console.log(response);
             if (!!response && !!response.data) {
                 var res = response.data;
                 var str='';
                 for (var i = 0; i < res.length; i++) {
-                    str += '<li><a target="__blank" href="${nav_url+res[i].url}">${res[i].title}</a></li>'
+                    str += '<li><a target="__blank" href="'+nav_url+res[i].url+'">'+res[i].title+'</a></li>'
                 }
-                console.log()
+
                 $('#navItem').html(str);
             }
 
@@ -50,4 +51,22 @@ function getQueryVariable(variable) {
         }
     }
     return (false);
+}
+
+//兼容addEventListener函数
+function myAddEventListener(ele,event,fn){
+    if(ele.addEventListener){
+        ele.addEventListener(event,fn,false);
+    }else{
+        ele.attachEvent('on'+event,fn.bind(ele));
+    }
+}
+
+//兼容removeEventListener函数
+function myRemoveEventListener(ele,event,fn){
+    if(ele.removeEventListener){
+        ele.removeEventListener(event,fn,false);
+    }else{
+        ele.detachEvent('on'+event,fn.bind(ele));
+    }
 }
