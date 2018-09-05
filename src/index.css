@@ -245,13 +245,20 @@ textarea{
 }
 
 .user span {
-	margin-left: 10px;
-	color: #FFFFFF;
-	width: 144px;
-	height: 60px;
-	line-height: 60px;
-	display:block;
+    float: left;
+    margin-left: 10px;
+    color: #FFFFFF;
+    font-size: 16px;
+    display: inline-block;
+    width: 80px;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 0;
 }
+
 #channel {
 	width: 154px;
 	height: 40px;
@@ -261,19 +268,20 @@ textarea{
 }
 
 #channel img {
-	float: left;
-	width: 22px;
-	height: 17px;
-	display: block;
-	margin-top: 20px;
-	margin-left: 44px;
+    float: left;
+    width: 22px;
+    height: 17px;
+    display: block;
+    margin-top: 22px;
+    margin-left: 44px;
 }
 
 #channel span {
-	float: left;
-	color: #FFFFFF;
-	margin-top: 17px;
-	margin-left: 10px;
+    float: left;
+    color: #FFFFFF;
+    margin-top: 19px;
+    margin-left: 10px;
+    font-size: 16px;
 }
 
 .nav-op li a {
@@ -288,14 +296,6 @@ textarea{
 	height: 60px;
 	background: #f8a504;
 	color: #FFFFFF;
-}
-
-.nav-op:hover .user {
-	border: 0;
-}
-
-.nav-op:hover #channel {
-	border: 0;
 }
 
 .nav-op {

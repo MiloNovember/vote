@@ -4,12 +4,13 @@ var getData_url = 'http://10.3.39.153:8085';
 
 function show() {
     document.getElementById("channel-list").style.display = "block";
-};
+}
 
 function hide() {
     document.getElementById("channel-list").style.display = "none";
 }
 
+// 兼容ie8 bind的问题
 (function () {
     if(!Function.prototype.bind){
         Function.prototype.bind = function(){
@@ -27,29 +28,26 @@ function hide() {
 })();
 
 (function () {
-    var _this = this;
+    $.support.cors = true
     return $
         .ajax({
             type: "GET",
             dataType: "json",
-            url: getNav_url + "/api/front/category/getCategoryList"
+            url: getNav_url + "/api/front/category/getCategoryList",
+            error: function(err) {
+                console.log(err);
+            }
         })
         .then(function (response) {
-            // console.log(response);
+            console.log(response);
             if (!!response && !!response.data) {
                 var res = response.data;
-                var str='';
                 for (var i = 0; i < res.length; i++) {
-                    str += '<li><a target="__blank" href="'+nav_url+res[i].url+'">'+res[i].title+'</a></li>'
+                    $("#navItem").append('<li><a target="__blank" href="'+nav_url+res[i].url+'">'+res[i].title+'</a></li>')
                 }
-
-                $('#navItem').html(str);
             }
         });
 })();
-
-
-
 
 //取查询字符串
 function getQueryVariable(variable) {
