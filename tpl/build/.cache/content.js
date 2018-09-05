@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1157,"md5":"d1da323316300a105fbf6c0e6c4bd7be"}*/
+/*TMODJS:{"version":1158,"md5":"65921cc6193af4a2d1c66dc7d55c2061"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
@@ -62,7 +62,7 @@ $out+=' ';
 if(!!option.questionPart){
 $out+=' ';
 if(!option.questionPart.lineNum){
-$out+=' <input type="text" maxlength="';
+$out+=' <div class="input-wrapper"> <input type="text" maxlength="';
 $out+=$escape(option.questionPart.maximum);
 $out+='" id="';
 $out+=$escape(option.id);
@@ -76,7 +76,7 @@ $out+='" autocomplete="off" class="layui-input ';
 $out+=$escape(option.questionPart.maximum>20?'is-long':'');
 $out+=' option-input ';
 $out+=$escape(!!option.mustSelect?'ml-36':'');
-$out+='"> ';
+$out+='"> </div> ';
 }else{
 $out+=' <textarea maxlength="';
 $out+=$escape(option.questionPart.maximum);
@@ -134,7 +134,7 @@ $out+='|';
 $out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
 $out+='" lay-verType="alert"></textarea> ';
 }else{
-$out+=' <input type="text" name="';
+$out+=' <div class="input-wrapper"> <input type="text" name="';
 $out+=$escape(option.id);
 $out+='" questionId="';
 $out+=$escape(item.id);
@@ -146,7 +146,7 @@ $out+='" required lay-verify="';
 $out+=$escape(!!option.mustSelect?'required':'');
 $out+='|';
 $out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
-$out+='" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input"> ';
+$out+='" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input"> </div> ';
 }
 $out+=' </div> ';
 });

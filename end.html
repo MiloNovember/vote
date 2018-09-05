@@ -9,7 +9,7 @@
 	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 	
 
-	<title id="vote-name">答卷结束</title>
+	<title>答卷结束</title>
 </head>
 
 <body>
@@ -89,15 +89,15 @@
 	<div class="footer"></div>
 	<script src="./js/common.js"></script>
 	<script>
-		var title=document.getElementById('investigate-title');
-		var resultBtn=document.getElementById('resultBtn');
-		var voteId=getQueryVariable('id')?getQueryVariable('id'):1;
-		var voteName=document.getElementById('vote-name')
-		title.innerHTML=decodeURIComponent(getQueryVariable('title'))!='false'?decodeURIComponent(getQueryVariable('title')):'';
-		voteName.innerHTML=title.innerHTML;
-		resultBtn.onclick=function(){
-			window.location.href='./result.html?title='+title.innerHTML+'&id='+voteId;
-		}
+		// var title=document.getElementById('investigate-title');
+		// var resultBtn=document.getElementById('resultBtn');
+		// var voteId=getQueryVariable('id')?getQueryVariable('id'):1;
+		// var voteName=document.getElementById('vote-name')
+		// title.innerHTML=decodeURIComponent(getQueryVariable('title'))!='false'?decodeURIComponent(getQueryVariable('title')):'';
+		// voteName.innerHTML=title.innerHTML;
+		// resultBtn.onclick=function(){
+		// 	window.location.href='./result.html?title='+title.innerHTML+'&id='+voteId;
+		// }
 	</script>
 </body>
 

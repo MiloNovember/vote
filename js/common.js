@@ -2,15 +2,29 @@ var nav_url = 'http://10.3.38.235/';
 var getNav_url = 'http://10.3.38.235:8081';
 var getData_url = 'http://10.3.39.153:8085';
 
-
 function show() {
     document.getElementById("channel-list").style.display = "block";
 };
 
 function hide() {
     document.getElementById("channel-list").style.display = "none";
-};
+}
 
+(function () {
+    if(!Function.prototype.bind){
+        Function.prototype.bind = function(){
+            if(typeof this !== 'function'){
+                throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
+            }
+            var _this = this;
+            var obj = arguments[0];
+            var ags = Array.prototype.slice.call(arguments,1);
+            return function(){
+                _this.apply(obj,ags);
+            };
+        };
+    }
+})();
 
 (function () {
     var _this = this;

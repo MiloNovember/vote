@@ -9,7 +9,7 @@ layui.use(['layer', 'form'], function(){
     //自定义验证规则
     form.verify({
         maxLength: function(value,lengthNum){
-            console.log(value,lengthNum);
+            // console.log(value,lengthNum);
             // if(value.length < 5){
             //     return '标题也太短了吧';
             // }
@@ -100,7 +100,7 @@ layui.use(['layer', 'form'], function(){
                 // 监听当点击dom时，还原label颜色
                 myAddEventListener(question, 'click', function (ev) {
                     $(this).find('label').css({color:"#222"})
-                    myRemoveEventListener(this, 'click')
+                    myRemoveEventListener(this, 'click', function () { })
                 })
             }
         }
@@ -156,8 +156,9 @@ layui.use(['layer', 'form'], function(){
                     })
                 }
             });
-            console.log(dataArr);
+            // console.log(dataArr);
 
+            $.support.cors = true
             $.ajax({
                 type:'POST',
                 contentType:'application/json',
@@ -169,7 +170,7 @@ layui.use(['layer', 'form'], function(){
             }).done(function(response){
                 console.log(response);
                 if (response.code == 0) {
-                    var title = document.getElementById('voteName').innerText
+                    var title = document.title
                     window.location.href='./end.html?title='+title+'&id='+voteId;
                 }
             })
