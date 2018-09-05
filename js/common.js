@@ -31,8 +31,6 @@ function hide() {
 
                 $('#navItem').html(str);
             }
-
-
         });
 })();
 

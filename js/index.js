@@ -26,18 +26,16 @@ Explain.prototype = {
         }
       })
       .then(function(response) {
-          console.log('获取空白问卷的response:',response.data);
+          // console.log('获取空白问卷的response:',response.data);
           _this.voteTitle=response.data.quesInfoByQuesId.title;
 
           if(response.data.isAnwserQues||response.data.quesInfoByQuesId.delFlag==1){
               window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId;
           }else{
               _this.res = response.data.quesInfoByQuesId;
-              var voteName=document.getElementById('voteName');
-              voteName.innerHTML=_this.res.title;
-              // console.log(voteName);
+              document.title = _this.res.title
           }
-      });
+      })
   },
   renderExplain: function() {
     var investigateTitle = this.res.title; //调查问卷大标题
