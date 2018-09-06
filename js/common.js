@@ -35,11 +35,11 @@ function hide() {
             dataType: "json",
             url: getNav_url + "/api/front/category/getCategoryList",
             error: function(err) {
-                console.log(err);
+                // console.log(err);
             }
         })
         .then(function (response) {
-            console.log(response);
+            // console.log(response);
             if (!!response && !!response.data) {
                 var res = response.data;
                 for (var i = 0; i < res.length; i++) {

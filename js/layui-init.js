@@ -165,13 +165,18 @@ layui.use(['layer', 'form'], function(){
                 url:getData_url+'/vote/vote/api/submitQuestionnaire',
                 data:JSON.stringify(dataArr),
                 error: function(err) {
-                    console.log(err);
+                    // console.log(err);
                 }
             }).done(function(response){
-                console.log(response);
+                // console.log(response);
                 if (response.code == 0) {
                     var title = document.title
-                    window.location.href='./end.html?title='+title+'&id='+voteId;
+                    var colour = explain.res.colour
+                    var notAnswer = $.cookie(voteId);
+                    if (notAnswer == 1) {
+                        $.cookie(voteId, '2');
+                    }
+                    window.location.href='./end.html?title='+title+'&id='+voteId+'&colour='+colour;
                 }
             })
         }

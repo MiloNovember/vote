@@ -1,5 +1,5 @@
 var voteId=getQueryVariable('getQueryVariable')?getQueryVariable('getQueryVariable'):89;
-
+var explain = null
 function Explain() {}
 Explain.prototype = {
   res: {},
@@ -26,14 +26,23 @@ Explain.prototype = {
         }
       })
       .then(function(response) {
+          var result = response.data.quesInfoByQuesId
           // console.log('获取空白问卷的response:',response.data);
-          _this.voteTitle=response.data.quesInfoByQuesId.title;
+          _this.voteTitle = result.title;
 
-          if(response.data.isAnwserQues||response.data.quesInfoByQuesId.delFlag==1){
-              window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId;
+          var notAnswer = $.cookie(voteId);
+          if (notAnswer == 2) {
+              window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId+'&colour='+_this.res.colour;
+          }
+
+          if(response.data.isAnwserQues||result.delFlag==1){
+              window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId+'&colour='+_this.res.colour;
           }else{
-              _this.res = response.data.quesInfoByQuesId;
+              _this.res = result;
               document.title = _this.res.title
+              if (!result.moreAnswer) {
+                  $.cookie(voteId, '1');
+              }
           }
       })
   },
@@ -73,6 +82,6 @@ Explain.prototype = {
 };
 
 $(function() {
-  var explain = new Explain();
+  explain = new Explain();
   explain.init();
 });

@@ -2,90 +2,114 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="src/index.css" />
-	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	<script src="./js/common.js"></script>
-	<title>问卷停止</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link id="css-src" rel="stylesheet" href="./src/red.css">
+    <link rel="stylesheet" type="text/css" href="src/index.css" />
+    <link rel="stylesheet" type="text/css" href="./src/layui.css" />
+    <script type="text/javascript" src="./js/layui.js"></script>
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <title></title>
 </head>
 
 <body>
-	<div class="nav">
-		<div class="nav-wap">
-			<!-- <img class="notice" src="img/laba.png" /> -->
-			<div id="container">
+<div class="nav">
+    <div class="nav-wap">
+        <div id="container">
+            <div class="txtMarquee-left">
+                <div class="grzx-bd">
+                    <ul class="infoList"></ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav-op">
+            <li class="user">
+                <a href="javascript:;">
+                    <img src="img/user.png" />
+                    <span id="username">Hi，你好</span>
+                </a>
+                <ul id="ps-nav">
+                    <li>
+                        <a href="./index.html">个人中心</a>
+                    </li>
+                    <li id="sign-out" class="sign-out">
+                        <a href="javascript:;">注销登陆</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="channel" onmouseover="show()" onmouseout="hide()">
+                <a href="">
+                    <img src="./img/menu-icon.png" />
+                    <span>频道</span>
+                </a>
 
-				<div class="txtMarquee-left">
+            </li>
+        </ul>
+        <div id="channel-list" onmouseover="show()" onmouseout="hide()">
+            <ul id="navItem"></ul>
+        </div>
+    </div>
+</div>
+<div class="xuan-top">
+    <div class="xuan-text">
+        <div class="xuan-text1">
+            <img src="img/logo.png" />
+        </div>
+        <div class="xuan-text2">
+            <img src="img/user1.png" />
+        </div>
+    </div>
+</div>
+<div class="vote-content">
+    <div class="vote-title">
+        <h2 id="investigate-title">调查问卷</h2>
+    </div>
+    <div class="vote-img">
+        <dl>
+            <dt>
+                <img src="img/finished.png" />
+            </dt>
+            <dd class="vote-text1">已结束 感谢支持</dd>
+        </dl>
+    </div>
 
-					<div class="grzx-bd">
-						<ul class="infoList">
+    <button id="resultBtn" class="layui-btn button">点此查看结果</button>
+</div>
 
-						</ul>
-					</div>
-				</div>
-			</div>
-			<ul class="nav-op">
-				<li class="user">
-					<a href="javascript:;">
-						<img src="img/user.png" />
-						<span id="username">Hi，你好</span>
-					</a>
-					<ul id="ps-nav">
-						<li>
-							<a href="./index.html">个人中心</a>
-						</li>
-						<li id="sign-out" class="sign-out">
-							<a href="javascript:;">注销登陆</a>
-						</li>
-					</ul>
-				</li>
+<div class="footer"></div>
+<script src="./js/common.js"></script>
+<script>
+    var title=document.getElementById('investigate-title');
+    var resultBtn = document.getElementById('resultBtn');
+    var voteId = getQueryVariable('id')?getQueryVariable('id'):1;
 
+    var colour = getQueryVariable('colour')?getQueryVariable('colour'):2;
 
-				<li id="channel" onmouseover="show()" onmouseout="hide()">
-					<a href="">
-						<img src="img/Rectangle 4.png" />
-						<span>频道</span>
-					</a>
+    (function changeColour (colour) {
+        // 改变主题色
+        var name;
+        if(colour==5){
+            name = 'yellow'
+        }else if(colour==4){
+            name = 'green'
+        }else if(colour==3){
+            name = 'blue'
+        }else if(colour==2){
+            name = 'red'
+        }else if(colour==1){
+            name = 'gray'
+        }
+        $("#css-src").attr("href", "./src/"+name+".css");
 
-				</li>
-			</ul>
-			<div id="channel-list" onmouseover="show()" onmouseout="hide()">
-				<ul id="navItem">
+    })(colour)
 
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="xuan-top">
-		<div class="xuan-text">
-			<div class="xuan-text1">
-				<img src="img/logo.png" />
-			</div>
-			<div class="xuan-text2">
-				<img src="img/user1.png" />
-			</div>
-		</div>
-	</div>
-	<div class="vote-content">
-		<div class="vote-title vote-title2">
-			<h2>人民日报食堂投票调查</h2>
-		</div>
-		<div class="vote-img">
-			<dl>
-				<dt>
-					<img src="img/finished.png" />
-				</dt>
-				<dd class="vote-text2">已结束 感谢支持</dd>
-			</dl>
-		</div>
+    document.title = title.innerHTML = decodeURIComponent(getQueryVariable('title'))!='false'?decodeURIComponent(getQueryVariable('title')):'';
 
-
-		<span class="button">点此查看结果</span>
-	</div>
-
-	<div class="footer"></div>
+    // resultBtn.onclick=function(){
+    // 	window.location.href='./result.html?title='+title.innerHTML+'&id='+voteId;
+    // }
+</script>
 </body>
 
 </html>

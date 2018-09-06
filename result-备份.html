@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title id="vote-name"></title>
+    <link rel="stylesheet" type="text/css" href="src/index.css" />
+    <link rel="stylesheet" type="text/css" href="src/layui.css" />
+    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="./tpl/build/template.js"></script>
+    <script src="./js/common.js"></script>
+    <style>
+        .result-item{
+            margin-top:30px;
+        }
+        .result-item ul li p {
+            float: left;
+            width: 335px;
+        }
+
+        .result-item ul li .bar-box {
+            float: right;
+            width: 380px;
+        }
+
+        .result-item .box-left {
+            width: 200px;
+            float: left;
+        }
+
+        .result-item .box-right {
+            width: 120px;
+            float: right;
+        }
+
+        .item-title h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .result-item ul li p {
+            font-size: 14px;
+            color: #222;
+        }
+
+        .result-item ul li {
+            margin-top: 16px;
+        }
+
+        .clear {
+            clear: both;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav-wap">
+            <!-- <img class="notice" src="img/laba.png" /> -->
+            <div id="container">
+
+                <div class="txtMarquee-left">
+
+                    <div class="grzx-bd">
+                        <ul class="infoList">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-op">
+                <li class="user">
+                    <a href="javascript:;">
+                        <img src="img/user.png" />
+                        <span id="username">Hi，你好</span>
+                    </a>
+                    <ul id="ps-nav">
+                        <li>
+                            <a href="./index.html">个人中心</a>
+                        </li>
+                        <li id="sign-out" class="sign-out">
+                            <a href="javascript:;">注销登陆</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li id="channel" onmouseover="show()" onmouseout="hide()">
+                    <a href="">
+                        <img src="img/Rectangle 4.png" />
+                        <span>频道</span>
+                    </a>
+
+                </li>
+            </ul>
+            <div id="channel-list" onmouseover="show()" onmouseout="hide()">
+                <ul id="navItem">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="xuan-top">
+        <div class="xuan-text">
+            <div class="xuan-text1">
+                <img src="img/logo.png" />
+            </div>
+            <div class="xuan-text2">
+                <img src="img/user1.png" />
+            </div>
+        </div>
+    </div>
+
+    <div class="vote-content">
+        <div class="vote-title vote-title2">
+            <h2 id="investigate-title"></h2>
+        </div>
+        <div class="reselt-content">
+             <div class="result-item">
+                <div class="item-title">
+                    <span>*</span>
+                    <h3>1.您平时在食堂用餐吗？（单选）</h3>
+                </div>
+                <ul>
+                    <li>
+                        <p>去不去，爱去不去，你想咋地</p>
+                        <div class="bar-box">
+                            <div class="box-left">
+                                <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                                    <div class="layui-progress-bar layui-bg-green" lay-percent="40%"></div>
+                                </div>
+                            </div>
+                            <div class="box-right">小计：
+                                <span>40%</span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                            <p>去不去，爱去不去，你想咋地</p>
+                            <div class="bar-box">
+                                <div class="box-left">
+                                    <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                                        <div class="layui-progress-bar layui-bg-green" lay-percent="40%"></div>
+                                    </div>
+                                </div>
+                                <div class="box-right">小计：
+                                    <span>40%</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                </ul>
+
+            </div>
+
+            <div class="result-item">
+                    <div class="item-title">
+                        <span>*</span>
+                        <h3>1.您平时在食堂用餐吗？（单选）</h3>
+                    </div>
+                    <ul>
+                        <li>
+                            <p>去不去，爱去不去，你想咋地</p>
+                            <div class="bar-box">
+                                <div class="box-left">
+                                    <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                                        <div class="layui-progress-bar layui-bg-green" lay-percent="40%"></div>
+                                    </div>
+                                </div>
+                                <div class="box-right">小计：
+                                    <span>40%</span>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </li>
+                        <li>
+                                <p>去不去，爱去不去，你想咋地</p>
+                                <div class="bar-box">
+                                    <div class="box-left">
+                                        <div class="layui-progress layui-progress-big" lay-showPercent="yes">
+                                            <div class="layui-progress-bar layui-bg-green" lay-percent="40%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="box-right">小计：
+                                        <span>40%</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="clear"></div>
+                            </li>
+                    </ul>
+    
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./js/result.js"></script>
+    <script src="./js/layui.js"></script>
+</body>
+
+</html>

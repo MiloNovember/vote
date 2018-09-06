@@ -67,12 +67,7 @@ input{
     line-height: 110px;
     margin:0;
 }
-.vote-title2 h2{
-    color: #D43E42
-}
-.vote-title2{
-    border-bottom: 2px solid #D43E42;
-}
+
 
 .line{
     width:100%;
@@ -112,20 +107,21 @@ input{
     width: 80%;
     height: auto;
 }
+
 .layui-btn.button{
     height:45px;
+    line-height: 45px;
     width:400px;
-    margin:0 auto;
+    margin:50px auto;
     border:none;
     border-radius: 5px;
-    behavior: url("./PIE.htc");
+    behavior: url(pie.htc);
     color:#fff;
     text-align: center;
-    line-height: 45px;
-    margin-top:50px;
-    margin-bottom:50px;
     display: block !important;
-    cursor: pointer;
+}
+.button {
+    background: transparent;
 }
 textarea{
     width:335px;
@@ -151,8 +147,8 @@ textarea{
 	margin-top: 25px;
 }
 .vote-text1{
-	width:144px;
-	margin-left:25px;
+	width:194px;
+    text-align: center;
 }
 .vote-text2{
 	width:184px;
@@ -503,7 +499,7 @@ textarea{
 	border: 1px solid #d1d1d1;
 	height: 50px;
 	border-radius: 6px;
-    behavior: url("./PIE.htc");
+    behavior: url(pie.htc);
 	padding: 0 20px;
 	line-height: 50px;
 	outline: none;
@@ -543,7 +539,7 @@ textarea{
 	color: #fff;
 	border: 0;
 	border-radius: 6px;
-    behavior: url("./PIE.htc");
+    behavior: url(pie.htc);
 	margin-top: 16px;
 	font-size: 22px;
 	cursor: pointer;

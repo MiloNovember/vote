@@ -1,30 +1,20 @@
-
-
 {{each questionList as item index}}
-<div class="result-item">
-    <div class="item-title">
-        <!-- <span>*</span> -->
-        <h3>{{index+1}}.{{item.title}}（单选）</h3>
-    </div>
-    <ul>
-        {{each item.questionPartList as option}}
+    <div class="result-item">
+        <span class="required">{{!!item.required?'*':'&nbsp;&nbsp;'}}</span>
+        <label>
+            {{index+1}}、{{item.title}}（{{!!item.multiSelect?'多选':'单选'}}）
+        </label>
+        <ul>
+            {{each item.questionPartList as option}}
             <li>
-                <p>{{option.content}}</p>
-                <div class="bar-box">
-                    <div class="box-left">
-                        <div class="layui-progress layui-progress-big" lay-showPercent="yes">
-                            <div class="layui-progress-bar" lay-percent="{{option.count}}%"></div>
-                        </div>
-                    </div>
-                    <div class="box-right">小计：
-                        <span>{{option.count}}%</span>
-                    </div>
-                    <div class="clear"></div>
+                <span class="result-title">{{option.content}}</span>
+                <div class="layui-progress progress-ie9">
+                    <div class="layui-progress-bar" lay-percent="{{option.persentage}}"></div>
                 </div>
-                <div class="clear"></div>
+                <span class="progress-num">{{option.persentage}}%</span>
+                <span class="sum">小计：{{option.count}}</span>
             </li>
-        {{/each}}
-    </ul>
-
-</div>
+            {{/each}}
+        </ul>
+    </div>
 {{/each}}

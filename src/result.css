@@ -1,0 +1,87 @@
+.result-content {
+    width: 800px;
+    color: #222;
+    margin-top: 30px;
+}
+
+.result-content .result-item {
+    margin-bottom: 30px;
+}
+
+.result-content label {
+    font-size:16px;
+}
+
+.result-content .result-item ul {
+    padding-left: 35px;
+    margin-top: 15px;
+}
+
+.result-content .result-item ul li {
+    position: relative;
+    width: 727px;
+    min-height: 20px;
+    line-height: 20px;
+    padding: 8px 19px;
+}
+
+:root .result-content .result-item ul li:nth-child(odd) {
+    background: #F7F7F7;
+}
+
+:root .result-content .result-item ul li:nth-child(even) {
+    background: #fff;
+}
+
+.result-content .result-item ul li .result-title {
+    display: inline-block;
+    width: 334px;
+    font-size: 14px;
+}
+
+.result-content .result-item ul li .layui-progress {
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+    left: 374px;
+    width: 170px;
+    height: 10px;
+    background-color: #fff;
+}
+
+.progress-ie9 {
+    border: 1px solid #c1c1c1;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    behavior: url(pie.htc);
+}
+
+:root .progress-ie9 {
+    border: 1px solid #e8e8e8;
+}
+
+.result-content .result-item ul li .layui-progress .layui-progress-bar {
+    height: 10px;
+    background: #B2D2DF;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    behavior: url(pie.htc);
+}
+
+.result-content .result-item ul li .progress-num {
+    position: absolute;
+    top: 50%;
+    left: 564px;
+    margin-top: -8px;
+    font-size: 12px;
+}
+
+.result-content .result-item ul li .sum {
+    position: absolute;
+    top: 50%;
+    left: 646px;
+    margin-top: -8px;
+    font-size: 12px;
+}
