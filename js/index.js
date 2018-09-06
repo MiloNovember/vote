@@ -32,11 +32,13 @@ Explain.prototype = {
 
           var notAnswer = $.cookie(voteId);
           if (notAnswer == 2) {
-              window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId+'&colour='+_this.res.colour;
+              window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId+'&colour=2';
           }
 
+          result.delFlag = 1
+
           if(response.data.isAnwserQues||result.delFlag==1){
-              window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId+'&colour='+_this.res.colour;
+              window.location.href="./stop.html?title="+_this.voteTitle+'&id='+voteId+'&colour=2';
           }else{
               _this.res = result;
               document.title = _this.res.title

@@ -8,18 +8,7 @@ layui.use(['layer', 'form'], function(){
 
     //自定义验证规则
     form.verify({
-        maxLength: function(value,lengthNum){
-            // console.log(value,lengthNum);
-            // if(value.length < 5){
-            //     return '标题也太短了吧';
-            // }
-        }
-        ,minLength: function(value){
-            if(value.length < 5){
-                return '标题也太短了吧';
-            }
-        }
-        ,cn: function(value){
+        cn: function(value){
             var reg = /^[\u2E80-\u9FFF]+$/
             if(value!=='' && !reg.test(value)){
                 return '请输入汉字';
@@ -56,7 +45,7 @@ layui.use(['layer', 'form'], function(){
             }
         }
         ,eMail: function(value){
-            var reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            var reg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
             if(value!=='' && !reg.test(value)){
                 return '请输入正确的邮箱格式';
             }

@@ -106,9 +106,9 @@
 
     document.title = title.innerHTML = decodeURIComponent(getQueryVariable('title'))!='false'?decodeURIComponent(getQueryVariable('title')):'';
 
-    // resultBtn.onclick=function(){
-    // 	window.location.href='./result.html?title='+title.innerHTML+'&id='+voteId;
-    // }
+    resultBtn.onclick = function(){
+        window.location.href = './result.html?title='+title.innerHTML+'&id='+voteId+'&colour='+colour;
+    }
 </script>
 </body>
 
