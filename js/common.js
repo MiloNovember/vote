@@ -12,16 +12,16 @@ function hide() {
 
 // 兼容ie8 bind的问题
 (function () {
-    if(!Function.prototype.bind){
-        Function.prototype.bind = function(){
-            if(typeof this !== 'function'){
+    if (!Function.prototype.bind) {
+        Function.prototype.bind = function () {
+            if (typeof this !== 'function') {
                 throw new TypeError('Function.prototype.bind - what is trying to be bound is not callable');
             }
             var _this = this;
             var obj = arguments[0];
-            var ags = Array.prototype.slice.call(arguments,1);
-            return function(){
-                _this.apply(obj,ags);
+            var ags = Array.prototype.slice.call(arguments, 1);
+            return function () {
+                _this.apply(obj, ags);
             };
         };
     }
@@ -34,7 +34,7 @@ function hide() {
             type: "GET",
             dataType: "json",
             url: getNav_url + "/api/front/category/getCategoryList",
-            error: function(err) {
+            error: function (err) {
                 // console.log(err);
             }
         })
@@ -43,7 +43,7 @@ function hide() {
             if (!!response && !!response.data) {
                 var res = response.data;
                 for (var i = 0; i < res.length; i++) {
-                    $("#navItem").append('<li><a target="__blank" href="'+nav_url+res[i].url+'">'+res[i].title+'</a></li>')
+                    $("#navItem").append('<li><a target="__blank" href="' + nav_url + res[i].url + '">' + res[i].title + '</a></li>')
                 }
             }
         });
@@ -64,19 +64,19 @@ function getQueryVariable(variable) {
 }
 
 //兼容addEventListener函数
-function myAddEventListener(ele,event,fn){
-    if(ele.addEventListener){
-        ele.addEventListener(event,fn,false);
-    }else{
-        ele.attachEvent('on'+event,fn.bind(ele));
+function myAddEventListener(ele, event, fn) {
+    if (ele.addEventListener) {
+        ele.addEventListener(event, fn, false);
+    } else {
+        ele.attachEvent('on' + event, fn.bind(ele));
     }
 }
 
 //兼容removeEventListener函数
-function myRemoveEventListener(ele,event,fn){
-    if(ele.removeEventListener){
-        ele.removeEventListener(event,fn,false);
-    }else{
-        ele.detachEvent('on'+event,fn.bind(ele));
+function myRemoveEventListener(ele, event, fn) {
+    if (ele.removeEventListener) {
+        ele.removeEventListener(event, fn, false);
+    } else {
+        ele.detachEvent('on' + event, fn.bind(ele));
     }
 }
