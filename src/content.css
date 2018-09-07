@@ -152,3 +152,41 @@
     line-height: 26px;
 }
 
+.layui-form .layui-form-item .layui-form-danger {
+    border-color: #FF5722;
+}
+
+.layui-form .layui-form-item .layui-form-danger:hover {
+    border-color: #FF5722 !important;
+}
+
+.layui-form-radioed i {
+    position: relative;
+}
+
+.layui-form-radioed i:before {
+    position: absolute;
+    top: 7px;
+    left: 1px;
+    display: block;
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    behavior: url(pie.htc);
+}
+
+.layui-form-radioed i:after {
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 999px;
+    behavior: url(pie.htc);
+}
+
+

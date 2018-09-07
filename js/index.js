@@ -35,8 +35,6 @@ Explain.prototype = {
               window.location.href="./end.html?title="+_this.voteTitle+'&id='+voteId+'&colour=2';
           }
 
-          result.delFlag = 1
-
           if(response.data.isAnwserQues||result.delFlag==1){
               window.location.href="./stop.html?title="+_this.voteTitle+'&id='+voteId+'&colour=2';
           }else{
@@ -64,9 +62,15 @@ Explain.prototype = {
     });
     $(".content").html(html);
 
-    setTimeout(function () {
+
+    layui.use('form', function() {
+        var form = layui.form
         form.render(); //更新全部layUI
-    },30)
+
+        $(".content").on("change","input[type=text]", function(ev) {
+            $(this).removeClass("layui-form-danger");
+        });
+    });
   },
   getCss:function(){
     if(this.res.colour==5){

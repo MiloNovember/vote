@@ -29,4 +29,8 @@
 .layui-form-item .layui-form-checkbox[lay-skin=primary]:hover i  {
     border-color: #52C4A4;
 }
+
+.layui-form-radioed i:before {
+    background: #52C4A4;
+}
 /*结束 颜色*/

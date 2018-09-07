@@ -1,9 +1,7 @@
 // layUI模块化引入
-var form = null
-
 layui.use(['layer', 'form'], function(){
     var layer = layui.layer
-    form = layui.form
+    var form = layui.form
 
 
     //自定义验证规则

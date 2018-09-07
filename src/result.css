@@ -47,18 +47,14 @@
     width: 170px;
     height: 10px;
     background-color: #fff;
+    border: 1px solid #e8e8e8;
 }
 
 .progress-ie9 {
-    border: 1px solid #c1c1c1;
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     border-radius: 20px;
     behavior: url(pie.htc);
-}
-
-:root .progress-ie9 {
-    border: 1px solid #e8e8e8;
 }
 
 .result-content .result-item ul li .layui-progress .layui-progress-bar {

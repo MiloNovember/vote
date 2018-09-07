@@ -4,6 +4,7 @@
 
 .vote-title{
     color: #FFA637;
+    border-bottom: 2px solid #FFA637;
 }
 
 .layui-btn.button{
@@ -27,5 +28,9 @@
 
 .layui-form-item .layui-form-checkbox[lay-skin=primary]:hover i  {
     border-color: #FFA637;
+}
+
+.layui-form-radioed i:before {
+    background: #FFA637;
 }
 /*结束 颜色*/
