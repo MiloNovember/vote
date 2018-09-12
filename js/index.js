@@ -33,6 +33,9 @@ Explain.prototype = {
                 // console.log('获取空白问卷的response:',response.data);
                 _this.voteTitle = result.title;
 
+                //保存是否允许查看结果
+                $.cookie('isCheckAnswer', result.checkAnswer)
+
                 var notAnswer = $.cookie(voteId);
                 if (notAnswer == 2) {
                     window.location.href = "./end.html?title=" + _this.voteTitle + '&id=' + voteId + '&colour=2';
@@ -73,6 +76,39 @@ Explain.prototype = {
             $(".content").on("change", "input[type=text]", function (ev) {
                 $(this).removeClass("layui-form-danger");
             });
+
+            /*监听单选与多选，后面有填空的，只有选中才可以填写，如果未选中不可填写并清空值*/
+            $('.layui-form-radio').on('click', function (ev) {
+                var notChecked = $("input[type=radio]").not("input:checked");
+
+                for (var i = 0; i < notChecked.length; i++) {
+                    var notEl = notChecked[i];
+                    var notArr = $(notEl).next().next().find('input[type=text]')
+                    if (notArr.length > 0) {
+                        $(notArr[0]).attr('disabled', 'disabled').val('')
+                    }
+                }
+
+                var input = $(this).prev()
+                var id
+
+                id = input.attr('questionPartId')
+
+                $('#'+id).removeAttr('disabled')
+            })
+
+            $('.layui-form-checkbox').on('click', function (ev) {
+                var input = $(this).prev()
+                var id
+                if ($(input[0]).attr('checked')) {
+                    id = input.attr('questionPartId')
+                    $('#'+id).removeAttr('disabled')
+                }else {
+                    id = input.attr('questionPartId')
+                    $('#'+id).attr('disabled', 'disabled').val('')
+                }
+            })
+
         });
     },
     getCss: function () {

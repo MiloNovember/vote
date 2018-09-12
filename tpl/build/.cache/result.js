@@ -1,4 +1,4 @@
-/*TMODJS:{"version":92,"md5":"b04a86bd9119dcfa8f20ce988e256f06"}*/
+/*TMODJS:{"version":93,"md5":"33cc5ba67ab3e5b76f7d227b901d99e6"}*/
 template('result',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$index=$data.$index,$out='';$each(questionList,function(item,index){
@@ -15,7 +15,7 @@ $each(item.questionPartList,function(option,$index){
 $out+=' <li> <span class="result-title">';
 $out+=$escape(option.content);
 $out+='</span> <div class="layui-progress progress-ie9"> <div class="layui-progress-bar" lay-percent="';
-$out+=$escape(option.persentage);
+$out+=$escape(option.persentage+'%');
 $out+='"></div> </div> <span class="progress-num">';
 $out+=$escape(option.persentage);
 $out+='%</span> <span class="sum">小计：';

@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="src/index.css"/>
     <link rel="stylesheet" type="text/css" href="./src/layui.css"/>
     <script type="text/javascript" src="./js/layui.js"></script>
-    <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
     <title></title>
 </head>
 
@@ -74,40 +75,44 @@
         </dl>
     </div>
 
-    <button id="resultBtn" class="layui-btn button">点此查看结果</button>
+    <button id="resultBtn" class="layui-btn button" style="visibility: hidden;">点此查看结果</button>
 </div>
 
 <div class="footer"></div>
 <script src="./js/common.js"></script>
 <script>
-    var title = document.getElementById('investigate-title');
-    var resultBtn = document.getElementById('resultBtn');
-    var voteId = getQueryVariable('id') ? getQueryVariable('id') : 1;
+    window.onload = function () {
+        var title = document.getElementById('investigate-title');
+        var resultBtn = document.getElementById('resultBtn');
+        var voteId = getQueryVariable('id') ? getQueryVariable('id') : 1;
+        var colour = getQueryVariable('colour') ? getQueryVariable('colour') : 2;
 
-    var colour = getQueryVariable('colour') ? getQueryVariable('colour') : 2;
-
-    (function changeColour(colour) {
-        // 改变主题色
-        var name;
-        if (colour == 5) {
-            name = 'yellow'
-        } else if (colour == 4) {
-            name = 'green'
-        } else if (colour == 3) {
-            name = 'blue'
-        } else if (colour == 2) {
-            name = 'red'
-        } else if (colour == 1) {
-            name = 'gray'
+        if ($.cookie('isCheckAnswer') == '1') {
+            $('#resultBtn').css('visibility','initial')
+            resultBtn.onclick = function () {
+                window.location.href = './result.html?title=' + title.innerHTML + '&id=' + voteId + '&colour=' + colour;
+            }
         }
-        $("#css-src").attr("href", "./src/" + name + ".css");
 
-    })(colour)
+        (function changeColour(colour) {
+            // 改变主题色
+            var name;
+            if (colour == 5) {
+                name = 'yellow'
+            } else if (colour == 4) {
+                name = 'green'
+            } else if (colour == 3) {
+                name = 'blue'
+            } else if (colour == 2) {
+                name = 'red'
+            } else if (colour == 1) {
+                name = 'gray'
+            }
+            $("#css-src").attr("href", "./src/" + name + ".css");
 
-    document.title = title.innerHTML = decodeURIComponent(getQueryVariable('title')) != 'false' ? decodeURIComponent(getQueryVariable('title')) : '';
+        })(colour)
 
-    resultBtn.onclick = function () {
-        window.location.href = './result.html?title=' + title.innerHTML + '&id=' + voteId + '&colour=' + colour;
+        document.title = title.innerHTML = decodeURIComponent(getQueryVariable('title')) != 'false' ? decodeURIComponent(getQueryVariable('title')) : '';
     }
 </script>
 </body>

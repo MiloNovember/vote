@@ -101,20 +101,20 @@ layui.use(['layer', 'form'], function () {
         } else {
             var dataArr = []
             var selection = $('input:checked')
-            var FillInTheBlanks = $('.fill-in-the-blank input[type=text]')
-            var textAreas = $('.fill-in-the-blank textarea')
+            var FillInTheBlanks = $('input[type=text]')
+            var textAreas = $('textarea')
             /*选择题获取页面数据*/
             $(selection).each(function (key, item) {
-                var answerContent = ''
-                if ($(item).attr('isFitb') === '1') {
-                    var id = $(item).attr('questionPartId')
-                    answerContent = $('#' + id).val()
-                }
+                // var answerContent = ''
+                // if ($(item).attr('isFitb') === '1') {
+                //     var id = $(item).attr('questionPartId')
+                //     answerContent = $('#' + id).val()
+                // }
                 dataArr.push({
                     "questionnaireId": voteId,
                     "questionPartId": $(item).attr('questionPartId'),
                     "questionId": $(item).attr('questionId'),
-                    "answerContent": answerContent,
+                    "answerContent": '',
                     "userId": '',
                     "userName": ''
                 })
@@ -144,7 +144,6 @@ layui.use(['layer', 'form'], function () {
                     })
                 }
             });
-            // console.log(dataArr);
 
             $.support.cors = true
             $.ajax({

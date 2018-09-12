@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1158,"md5":"65921cc6193af4a2d1c66dc7d55c2061"}*/
+/*TMODJS:{"version":1161,"md5":"413288f8caf58ea5fb992546ddcc2238"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
@@ -62,10 +62,14 @@ $out+=' ';
 if(!!option.questionPart){
 $out+=' ';
 if(!option.questionPart.lineNum){
-$out+=' <div class="input-wrapper"> <input type="text" maxlength="';
+$out+=' <div class="input-wrapper"> <input type="text" disabled="disabled" maxlength="';
 $out+=$escape(option.questionPart.maximum);
 $out+='" id="';
 $out+=$escape(option.id);
+$out+='" questionId="';
+$out+=$escape(option.questionPart.questionId);
+$out+='" questionPartId="';
+$out+=$escape(option.questionPart.id);
 $out+='" value="" required lay-verify="';
 $out+=$escape(!!option.questionPart.mustSelect?'required':'');
 $out+='|';
@@ -76,12 +80,16 @@ $out+='" autocomplete="off" class="layui-input ';
 $out+=$escape(option.questionPart.maximum>20?'is-long':'');
 $out+=' option-input ';
 $out+=$escape(!!option.mustSelect?'ml-36':'');
-$out+='"> </div> ';
+$out+='" /> </div> ';
 }else{
 $out+=' <textarea maxlength="';
 $out+=$escape(option.questionPart.maximum);
 $out+='" rows="2" id="';
 $out+=$escape(option.id);
+$out+='" questionId="';
+$out+=$escape(option.questionPart.questionId);
+$out+='" questionPartId="';
+$out+=$escape(option.questionPart.id);
 $out+='" required lay-verify="';
 $out+=$escape(!!option.questionPart.mustSelect?'required':'');
 $out+='|';
