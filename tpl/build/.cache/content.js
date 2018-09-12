@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1161,"md5":"413288f8caf58ea5fb992546ddcc2238"}*/
+/*TMODJS:{"version":1180,"md5":"b2751c9db646489200bced244a7bf7c0"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
@@ -40,7 +40,6 @@ $out+='" isFitb="';
 $out+=$escape(!!option.questionPart?1:0);
 $out+='" title="';
 $out+=$escape(option.content);
-$out+=$escape(!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':'');
 $out+='" lay-skin="primary" checked> ';
 }else{
 $out+=' <input type="';
@@ -55,12 +54,19 @@ $out+='" isFitb="';
 $out+=$escape(!!option.questionPart?1:0);
 $out+='" title="';
 $out+=$escape(option.content);
-$out+=$escape(!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':'');
 $out+='" lay-skin="primary"> ';
 }
 $out+=' ';
 if(!!option.questionPart){
-$out+=' ';
+$out+=' <div class="';
+$out+=$escape(!!option.url?'desc-wrap':'no-img-desc');
+$out+='"> ';
+if(!!option.questionPart.mustSelect){
+$out+=' <span class="required">*</span> ';
+}
+$out+=' <div class="description-word">';
+$out+=$escape(option.questionPart.content);
+$out+='</div> ';
 if(!option.questionPart.lineNum){
 $out+=' <div class="input-wrapper"> <input type="text" disabled="disabled" maxlength="';
 $out+=$escape(option.questionPart.maximum);
@@ -74,13 +80,9 @@ $out+='" value="" required lay-verify="';
 $out+=$escape(!!option.questionPart.mustSelect?'required':'');
 $out+='|';
 $out+=$escape(option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':'');
-$out+='" lay-verType="alert" placeholder="';
-$out+=$escape(option.questionPart.content);
-$out+='" autocomplete="off" class="layui-input ';
+$out+='" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input ';
 $out+=$escape(option.questionPart.maximum>20?'is-long':'');
-$out+=' option-input ';
-$out+=$escape(!!option.mustSelect?'ml-36':'');
-$out+='" /> </div> ';
+$out+=' option-input" /> </div> ';
 }else{
 $out+=' <textarea maxlength="';
 $out+=$escape(option.questionPart.maximum);
@@ -94,15 +96,11 @@ $out+='" required lay-verify="';
 $out+=$escape(!!option.questionPart.mustSelect?'required':'');
 $out+='|';
 $out+=$escape(option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':'');
-$out+='" lay-verType="alert" placeholder="';
-$out+=$escape(option.questionPart.content);
-$out+='" class="layui-textarea ';
+$out+='" lay-verType="alert" placeholder="" class="layui-textarea ';
 $out+=$escape(option.questionPart.maximum>20?'is-long':'');
-$out+=' option-textarea ';
-$out+=$escape(!!option.mustSelect?'ml-36':'');
-$out+='"></textarea> ';
+$out+=' option-textarea"></textarea> ';
 }
-$out+=' ';
+$out+=' </div> ';
 }
 $out+=' </div> ';
 });
@@ -127,8 +125,7 @@ $out+=' &nbsp; ';
 }
 $out+=' <span>';
 $out+=$escape(option.content);
-$out+=$escape(!option.mustSelect?'（非必填）':'');
-$out+='：</span> ';
+$out+='</span> ';
 if(!!option.lineNum){
 $out+=' <textarea questionId="';
 $out+=$escape(item.id);
@@ -137,9 +134,9 @@ $out+=$escape(option.id);
 $out+='" placeholder="" rows="3" class="layui-textarea" maxlength="';
 $out+=$escape(option.maximum);
 $out+='" required lay-verify="';
-$out+=$escape(!!option.mustSelect?'required':'');
+$out+=$escape(!!option.mustSelect&&!!item.required?'required':'');
 $out+='|';
-$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
+$out+=$escape(!item.required?'':option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
 $out+='" lay-verType="alert"></textarea> ';
 }else{
 $out+=' <div class="input-wrapper"> <input type="text" name="';
@@ -151,9 +148,9 @@ $out+=$escape(option.id);
 $out+='" maxlength="';
 $out+=$escape(option.maximum);
 $out+='" required lay-verify="';
-$out+=$escape(!!option.mustSelect?'required':'');
+$out+=$escape(!!option.mustSelect&&!!item.required?'required':'');
 $out+='|';
-$out+=$escape(option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
+$out+=$escape(!item.required?'':option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':'');
 $out+='" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input"> </div> ';
 }
 $out+=' </div> ';

@@ -1,6 +1,5 @@
 var voteId = getQueryVariable('getQueryVariable') ? getQueryVariable('getQueryVariable') : 89;
 var explain = null
-
 function Explain() {
 }
 
@@ -30,7 +29,7 @@ Explain.prototype = {
             })
             .then(function (response) {
                 var result = response.data.quesInfoByQuesId
-                // console.log('获取空白问卷的response:',response.data);
+                console.log('获取空白问卷的response:',response.data);
                 _this.voteTitle = result.title;
 
                 //保存是否允许查看结果
@@ -77,24 +76,29 @@ Explain.prototype = {
                 $(this).removeClass("layui-form-danger");
             });
 
+            $('input[type=text]:disabled').each(function (index,ele) {
+                var verify = $(ele).attr('lay-verify')
+                var id = $(ele).attr('id')
+                $.cookie('lay-verify-'+id, verify, { expires: 1 })
+                $(ele).attr('lay-verify', '')
+            })
+
+
             /*监听单选与多选，后面有填空的，只有选中才可以填写，如果未选中不可填写并清空值*/
             $('.layui-form-radio').on('click', function (ev) {
                 var notChecked = $("input[type=radio]").not("input:checked");
+                var input = $(this).prev()
+                var id = input.attr('questionPartId')
 
                 for (var i = 0; i < notChecked.length; i++) {
                     var notEl = notChecked[i];
                     var notArr = $(notEl).next().next().find('input[type=text]')
                     if (notArr.length > 0) {
-                        $(notArr[0]).attr('disabled', 'disabled').val('')
+                        $(notArr[0]).attr('disabled', 'disabled').val('').attr('lay-verify', '')
                     }
                 }
 
-                var input = $(this).prev()
-                var id
-
-                id = input.attr('questionPartId')
-
-                $('#'+id).removeAttr('disabled')
+                $('#'+id).removeAttr('disabled').attr('lay-verify', $.cookie('lay-verify-'+id))
             })
 
             $('.layui-form-checkbox').on('click', function (ev) {
@@ -102,10 +106,10 @@ Explain.prototype = {
                 var id
                 if ($(input[0]).attr('checked')) {
                     id = input.attr('questionPartId')
-                    $('#'+id).removeAttr('disabled')
+                    $('#'+id).removeAttr('disabled').attr('lay-verify', $.cookie('lay-verify-'+id))
                 }else {
                     id = input.attr('questionPartId')
-                    $('#'+id).attr('disabled', 'disabled').val('')
+                    $('#'+id).attr('disabled', 'disabled').val('').attr('lay-verify', '')
                 }
             })
 

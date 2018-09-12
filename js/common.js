@@ -45,6 +45,9 @@ function hide() {
                 for (var i = 0; i < res.length; i++) {
                     $("#navItem").append('<li><a target="__blank" href="' + nav_url + res[i].url + '">' + res[i].title + '</a></li>')
                 }
+
+                var html = template("login", {});
+                $("#loginEle").html(html);
             }
         });
 })();

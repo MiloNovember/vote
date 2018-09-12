@@ -14,18 +14,24 @@
                     <img src="{{option.url}}" alt="">
                     {{/if}}
                     {{if !!option.defaultSelect}}
-                    <input type="{{item.multiSelect=='0'?'radio':'checkbox'}}" name="{{item.id}}" questionId="{{item.id}}" questionPartId="{{option.id}}" isFitb="{{!!option.questionPart?1:0}}" title="{{option.content}}{{!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':''}}" lay-skin="primary" checked>
+                    <input type="{{item.multiSelect=='0'?'radio':'checkbox'}}" name="{{item.id}}" questionId="{{item.id}}" questionPartId="{{option.id}}" isFitb="{{!!option.questionPart?1:0}}" title="{{option.content}}" lay-skin="primary" checked>
                     {{else}}
-                    <input type="{{item.multiSelect=='0'?'radio':'checkbox'}}" name="{{item.id}}" questionId="{{item.id}}" questionPartId="{{option.id}}" isFitb="{{!!option.questionPart?1:0}}" title="{{option.content}}{{!!option.questionPart&&!!option.mustSelect?'请说明（非必填）':''}}" lay-skin="primary">
+                    <input type="{{item.multiSelect=='0'?'radio':'checkbox'}}" name="{{item.id}}" questionId="{{item.id}}" questionPartId="{{option.id}}" isFitb="{{!!option.questionPart?1:0}}" title="{{option.content}}" lay-skin="primary">
                     {{/if}}
                     {{if !!option.questionPart}}
+                    <div class="{{!!option.url?'desc-wrap':'no-img-desc'}}">
+                        {{if !!option.questionPart.mustSelect}}
+                        <span class="required">*</span>
+                        {{/if}}
+                        <div class="description-word">{{option.questionPart.content}}</div>
                         {{if !option.questionPart.lineNum}}
                         <div class="input-wrapper">
-                            <input type="text" disabled="disabled" maxlength="{{option.questionPart.maximum}}" id="{{option.id}}" questionId="{{option.questionPart.questionId}}" questionPartId="{{option.questionPart.id}}" value="" required  lay-verify="{{!!option.questionPart.mustSelect?'required':''}}|{{option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':''}}" lay-verType="alert" placeholder="{{option.questionPart.content}}" autocomplete="off" class="layui-input {{option.questionPart.maximum>20?'is-long':''}} option-input {{!!option.mustSelect?'ml-36':''}}" />
+                            <input type="text" disabled="disabled" maxlength="{{option.questionPart.maximum}}" id="{{option.id}}" questionId="{{option.questionPart.questionId}}" questionPartId="{{option.questionPart.id}}" value="" required  lay-verify="{{!!option.questionPart.mustSelect?'required':''}}|{{option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':''}}" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input {{option.questionPart.maximum>20?'is-long':''}} option-input" />
                         </div>
                         {{else}}
-                        <textarea maxlength="{{option.questionPart.maximum}}" rows="2" id="{{option.id}}" questionId="{{option.questionPart.questionId}}" questionPartId="{{option.questionPart.id}}" required  lay-verify="{{!!option.questionPart.mustSelect?'required':''}}|{{option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':''}}" lay-verType="alert" placeholder="{{option.questionPart.content}}" class="layui-textarea {{option.questionPart.maximum>20?'is-long':''}} option-textarea {{!!option.mustSelect?'ml-36':''}}"></textarea>
+                        <textarea maxlength="{{option.questionPart.maximum}}" rows="2" id="{{option.id}}" questionId="{{option.questionPart.questionId}}" questionPartId="{{option.questionPart.id}}" required  lay-verify="{{!!option.questionPart.mustSelect?'required':''}}|{{option.questionPart.verification==1?'telephone':option.questionPart.verification==2?'postCode':option.questionPart.verification==3?'identityCheck':option.questionPart.verification==4?'cn':option.questionPart.verification==5?'english':option.questionPart.verification==6?'num':option.questionPart.verification==7?'eMail':option.questionPart.verification==8?'Url':''}}" lay-verType="alert" placeholder="" class="layui-textarea {{option.questionPart.maximum>20?'is-long':''}} option-textarea"></textarea>
                         {{/if}}
+                    </div>
                     {{/if}}
                 </div>
                 {{/each}}
@@ -48,12 +54,12 @@
                     {{else}}
                     &nbsp;
                     {{/if}}
-                    <span>{{option.content}}{{!option.mustSelect?'（非必填）':''}}：</span>
+                    <span>{{option.content}}</span>
                     {{if !!option.lineNum}}
-                    <textarea questionId="{{item.id}}" questionPartId="{{option.id}}" placeholder="" rows="3" class="layui-textarea" maxlength="{{option.maximum}}" required  lay-verify="{{!!option.mustSelect?'required':''}}|{{option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':''}}" lay-verType="alert"></textarea>
+                    <textarea questionId="{{item.id}}" questionPartId="{{option.id}}" placeholder="" rows="3" class="layui-textarea" maxlength="{{option.maximum}}" required  lay-verify="{{!!option.mustSelect&&!!item.required?'required':''}}|{{!item.required?'':option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':''}}" lay-verType="alert"></textarea>
                     {{else}}
                     <div class="input-wrapper">
-                        <input type="text" name="{{option.id}}" questionId="{{item.id}}" questionPartId="{{option.id}}" maxlength="{{option.maximum}}" required  lay-verify="{{!!option.mustSelect?'required':''}}|{{option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':''}}" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input">
+                        <input type="text" name="{{option.id}}" questionId="{{item.id}}" questionPartId="{{option.id}}" maxlength="{{option.maximum}}" required  lay-verify="{{!!option.mustSelect&&!!item.required?'required':''}}|{{!item.required?'':option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':''}}" lay-verType="alert" placeholder="" autocomplete="off" class="layui-input">
                     </div>
                     {{/if}}
                 </div>

@@ -1,0 +1,194 @@
+/* ============================登录============================= */
+.user ul li {
+    float: none;
+    width: 152px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background:#fff;
+
+}
+
+.nav-op li a{
+    color:#333;
+    font-size:16px;
+}
+
+.nav-op li a:hover {
+    width: 154px;
+    height: 60px;
+    background: #f8a504;
+    color:#fff;
+}
+
+.user ul {
+    border: 1px solid #f8a504;
+    padding: 10px 0 0;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    z-index: 999;
+}
+
+.user ul .sign-out a {
+    color: #f8a504;
+}
+.user ul .sign-out a:hover{
+    color:#fff;
+}
+
+/* #ps-nav a{
+	background:#fff;
+} */
+.sign-in {
+    width: 406px;
+    height: 472px;
+    padding: 34px 47px 86px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 99;
+    margin: -270px 0 0 -240px;
+    display: none;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    overflow: hidden;
+    background: rgb(0, 0, 0);
+    opacity: 0.8;
+    display: none;
+    -khtml-opacity:0.8;
+    -moz-opacity:0.8;
+    filter:alpha(opacity=80);
+}
+
+.sign-in h2 {
+    text-align: center;
+    font-size: 22px;
+    color: #333333;
+    font-weight: 500;
+    line-height: 84px;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+.sign-in h2 span {
+    display: block;
+    width: 140px;
+    line-height: 84px;
+    margin: 0 auto;
+    border-bottom: 2px solid #ffd200;
+}
+
+.sign-in .user-name {
+    margin-top: 70px;
+    margin-bottom: 46px;
+}
+
+.sign-in input {
+    width: 366px;
+    border: 1px solid #d1d1d1;
+    height: 50px;
+    border-radius: 6px;
+    padding: 0 20px;
+    line-height: 50px;
+    outline: none;
+    text-align:left;
+}
+
+.forget {
+    float: right;
+}
+
+.forget p {
+    margin-top: 30px;
+    text-align: right;
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.remind {
+    width: 124px;
+    height: 39px;
+    background: url(../image/remind.png) no-repeat;
+    overflow: hidden;
+    display: none;
+}
+
+.remind p {
+    margin-top: 13px;
+    font-size: 14px;
+    color: #ff7800;
+    text-align: center;
+}
+
+.sign-button {
+    width: 100%;
+    height: 48px;
+    background: #ef4435;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    margin-top: 16px;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+}
+
+.login-err {
+    margin-top: 10px;
+    color: #ef4435;
+    display: none;
+}
+#channel span {
+    float: left;
+    color: #FFFFFF;
+    margin-top: 17px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+
+#channel img {
+    float: left;
+    width: 22px;
+    height: 17px;
+    display: block;
+    margin-top: 22px;
+    margin-left: 44px;
+}
+.user span {
+    float: left;
+    margin-left: 10px;
+    color: #FFFFFF;
+    font-size: 16px;
+    display: inline-block;
+    width: 80px;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top:0;
+}
+.txtMarquee-left div a{color:#fff; font-size:16px;}
+/*后期添加控制滚动信息权限*/
+.nav-wap .notice,.txtMarquee-left{
+//display:none;
+    visibility:hidden;
+
+}
+.notice .txtMarquee-left{
+    visibility:visible;
+}
+.nav .nav-wap .show-notice{
+    visibility:visible
+}
