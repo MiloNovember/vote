@@ -1,0 +1,2 @@
+/*TMODJS:{"version":7,"md5":"a95ac66b6915d38a17e766b2181cf55c"}*/
+template('login','<div id="sign-in" class="sign-in"> <h2> <span>账号密码登录</span> </h2> <p class="user-name"> <input id="sign-name" type="text" placeholder="用户名"> </p> <p class="password"> <input id="password" type="password" placeholder="密码"> </p> <p id="login-err" class="login-err"></p> <div class="forget"> <p id="forget">忘记密码</p> <div id="remind" class="remind"> <p>请联系管理员</p> </div> </div> <button id="sign-btn" class="sign-button">登录</button> </div> <div id="mask" class="mask"></div> ');

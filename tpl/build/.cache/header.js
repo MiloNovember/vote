@@ -1,0 +1,2 @@
+/*TMODJS:{"version":2,"md5":"02a935cfcf505bb4ad5777fcdd9ae839"}*/
+template('header','<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>$Title$</title> </head> <body> $END$ </body> </html>');

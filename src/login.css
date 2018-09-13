@@ -57,8 +57,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
+    width: 100%;
+    height: 100%;
     z-index: 9;
     overflow: hidden;
     background: rgb(0, 0, 0);
@@ -70,6 +71,7 @@
 }
 
 .sign-in h2 {
+    display: block;
     text-align: center;
     font-size: 22px;
     color: #333333;
@@ -118,7 +120,7 @@
 .remind {
     width: 124px;
     height: 39px;
-    background: url(../image/remind.png) no-repeat;
+    /*background: url(../image/remind.png) no-repeat;*/
     overflow: hidden;
     display: none;
 }

@@ -8,6 +8,7 @@
     <link id="css-src" rel="stylesheet" href="./src/red.css">
     <link rel="stylesheet" type="text/css" href="src/index.css"/>
     <link rel="stylesheet" type="text/css" href="./src/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/login.css"/>
     <script type="text/javascript" src="./js/layui.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery.cookie.js"></script>
@@ -40,7 +41,7 @@
                 </ul>
             </li>
             <li id="channel" onmouseover="show()" onmouseout="hide()">
-                <a href="">
+                <a href="javaScript:;">
                     <img src="./img/menu-icon.png"/>
                     <span>频道</span>
                 </a>
@@ -115,6 +116,7 @@
         document.title = title.innerHTML = decodeURIComponent(getQueryVariable('title')) != 'false' ? decodeURIComponent(getQueryVariable('title')) : '';
     }
 </script>
+<script type="text/javascript" src="./js/login.js"></script>
 </body>
 
 </html>
