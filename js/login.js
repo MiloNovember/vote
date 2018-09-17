@@ -156,6 +156,7 @@ function hiddenPersonNav() {
         }).done(function (respones) {
             var res = respones.data;
             $('#username').html('Hi，你好')
+            sessionStorage.removeItem("token");
             window.location.reload();
         });
     });

@@ -99,6 +99,15 @@ layui.use(['layer', 'form'], function () {
                 content: '请您按要求完成问卷'
             });
         } else {
+            // 校验是否匿名
+            var tokens = sessionStorage.getItem("token") || "";
+            if (!explain.res.anonymity && !tokens) {
+                $('#username').click()
+                $(window).scrollTop(0);
+                return false;
+            }
+
+            // 获取用户填写数据
             var dataArr = []
             var selection = $('input:checked')
             var FillInTheBlanks = $('input[type=text]')

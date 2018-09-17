@@ -48,6 +48,11 @@ Explain.prototype = {
                     if (!result.moreAnswer) {
                         $.cookie(voteId, '1');
                     }
+
+                    // 是否匿名，如果必须登录，进页面先弹一次登录框
+                    if (!result.anonymity) {
+                        $('#username').click()
+                    }
                 }
             })
     },
