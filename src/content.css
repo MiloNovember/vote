@@ -132,6 +132,9 @@
     margin-left: 36px;
     display: inline-block;
     vertical-align: top;
+    border-radius: 2px;
+    behavior: url("pie.htc");
+    overflow-y: hidden;
 }
 
 .layui-form .layui-form-label {

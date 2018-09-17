@@ -32,7 +32,7 @@ $.support.cors = true;
         }
     }).done(function (response) {
         // alert(JSON.stringify(response));
-        console.log('response:',response);
+        // console.log('response:',response);
         if (response.code == 0) {
             //alert('qq');
             var res = response.data;
@@ -56,7 +56,6 @@ $.support.cors = true;
         maskInit()
         return false;
     });
-    //$('#username').unbind();//暂时取消登录功能
 })();
 
 function maskInit() {
@@ -83,7 +82,6 @@ function loginInit () {
             error: function (err) {
                 console.log(err);
                 // var err = err.responseJSON.message;
-                // var err = JSON.parse(err.responseText);
                 //alert(JSON.stringify(err));
                 $('#login-err').html('账号或密码不正确').css('display', 'block')
             }
