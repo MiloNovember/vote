@@ -1,6 +1,6 @@
 var nav_url = 'http://10.3.38.235/';
-var getNav_url = 'http://10.3.38.235:8081';
-var getData_url = 'http://10.3.39.153:8085';
+var getNav_url = 'http://10.3.38.235';
+var getData_url = 'http://10.3.38.235';
 
 function show() {
     document.getElementById("channel-list").style.display = "block";
