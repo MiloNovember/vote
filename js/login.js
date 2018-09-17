@@ -1,6 +1,8 @@
 var logins = 'http://10.3.38.235';
 var INDEX_SITESEARCH_PREFIX = 'http://10.3.38.235';//首页站内检索
 var tokens = sessionStorage.getItem("token") || "";
+var userId = null
+var userName = null
 //头部用户名显示 username
 //遮罩层 mask
 //登录最外层大盒子 sign-in
@@ -36,6 +38,8 @@ $.support.cors = true;
         if (response.code == 0) {
             //alert('qq');
             var res = response.data;
+            userId = res.iuser.id
+            userName = res.iuser.name
             $('#username').html(res.iuser.name)
                 .unbind('click')
                 .mouseover(showPersonNav)
@@ -86,8 +90,10 @@ function loginInit () {
                 $('#login-err').html('账号或密码不正确').css('display', 'block')
             }
         }).done(function (response) {
-            //alert(JSON.stringify(response));
+            // alert(JSON.stringify(response));
             var res = response.data;
+            userId = res.id
+            userName = res.name
             $('#mask').css('display', 'none')
             $('#sign-in').css('display', 'none')
             $('#username').html(res.name)

@@ -124,8 +124,8 @@ layui.use(['layer', 'form'], function () {
                     "questionPartId": $(item).attr('questionPartId'),
                     "questionId": $(item).attr('questionId'),
                     "answerContent": '',
-                    "userId": '',
-                    "userName": ''
+                    "userId": userId,
+                    "userName": userName
                 })
             });
             /*填空题获取页面数据*/
@@ -136,8 +136,8 @@ layui.use(['layer', 'form'], function () {
                         "questionPartId": $(item).attr('questionPartId'),
                         "questionId": $(item).attr('questionId'),
                         "answerContent": $(item).val(),
-                        "userId": '',
-                        "userName": ''
+                        "userId": userId,
+                        "userName": userName
                     })
                 }
             });
@@ -148,8 +148,8 @@ layui.use(['layer', 'form'], function () {
                         "questionPartId": $(item).attr('questionPartId'),
                         "questionId": $(item).attr('questionId'),
                         "answerContent": $(item).val(),
-                        "userId": '',
-                        "userName": ''
+                        "userId": userId,
+                        "userName": userName
                     })
                 }
             });
