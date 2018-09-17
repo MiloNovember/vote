@@ -158,7 +158,7 @@ layui.use(['layer', 'form'], function () {
             $.ajax({
                 type: 'POST',
                 contentType: 'application/json',
-                url: getData_url + '/vote/vote/api/submitQuestionnaire',
+                url: getData_url + '/vote/api/submitQuestionnaire',
                 data: JSON.stringify(dataArr),
                 error: function (err) {
                     // console.log(err);

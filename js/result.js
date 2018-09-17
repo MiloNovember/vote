@@ -22,7 +22,7 @@ Explain.prototype = {
                 type: "GET",
                 jsonp: "callback",
                 dataType: "jsonp",
-                url: getData_url + "/vote/vote/api/checkAnwsers",
+                url: getData_url + "/vote/api/checkAnwsers",
                 data: {
                     questionType: 1,
                     questionnaireId: voteId
