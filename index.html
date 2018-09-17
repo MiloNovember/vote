@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--[if lte IE 8]>
-    <script src="./js/PIE.js"></script>
+    <script src="./js/PIE_IE678.js"></script>
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="./src/index.css"/>
     <link rel="stylesheet" type="text/css" href="./src/content.css"/>
@@ -19,7 +19,6 @@
     <script type="text/javascript" src="./js/layui.js"></script>
     <script type="text/javascript" src="./js/jquery.js"></script>
     <script type="text/javascript" src="./js/jquery.cookie.js"></script>
-    <script src="./js/common.js"></script>
     <script type="text/javascript" src="./tpl/build/template.js"></script>
     <title></title>
 </head>
@@ -56,8 +55,8 @@
                     <span id="username"></span>
                 </a>
                 <ul id="ps-nav">
-                    <li>
-                        <a href="./index.html">个人中心</a>
+                    <li id="person">
+                        <a href="javascript:;">个人中心</a>
                     </li>
                     <li id="sign-out" class="sign-out">
                         <a href="javascript:;">注销登陆</a>
@@ -96,6 +95,7 @@
 
 <div id="loginEle"></div>
 
+<script src="./js/common.js"></script>
 <script src="./js/layui-init.js"></script>
 <script src="./js/index.js"></script>
 <script type="text/javascript" src="./js/login.js"></script>

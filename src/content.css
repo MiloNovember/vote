@@ -179,7 +179,7 @@
     position: relative;
 }
 
-.layui-form-radioed i:before {
+:root .layui-form-radioed i:before {
     position: absolute;
     top: 7px;
     left: 1px;
@@ -188,10 +188,9 @@
     width: 14px;
     height: 14px;
     border-radius: 999px;
-    behavior: url(pie.htc);
 }
 
-.layui-form-radioed i:after {
+:root .layui-form-radioed i:after {
     position: absolute;
     top: 11px;
     left: 5px;
@@ -201,7 +200,6 @@
     height: 6px;
     background: #fff;
     border-radius: 999px;
-    behavior: url(pie.htc);
 }
 
 

@@ -1,5 +1,5 @@
 var logins = 'http://10.3.38.235';
-var INDEX_SITESEARCH_PREFIX = 'http://10.3.38.235:';//首页站内检索
+var INDEX_SITESEARCH_PREFIX = 'http://10.3.38.235';//首页站内检索
 var tokens = sessionStorage.getItem("token") || "";
 //头部用户名显示 username
 //遮罩层 mask
@@ -15,7 +15,7 @@ var tokens = sessionStorage.getItem("token") || "";
 
 //初始化
 $('#username').html("Hi，你好")
-jQuery.support.cors = true;
+$.support.cors = true;
 (function () {
     $.ajax({
         type: "get",
@@ -28,15 +28,15 @@ jQuery.support.cors = true;
             "X-Requested-With": "XMLHttpRequest"
         },
         error: function (err) {
-            alert(JSON.stringify(err));
+            console.log('err:',JSON.stringify(err))
         }
     }).done(function (response) {
-        //alert(JSON.stringify(response));
-        // console.log(response);
+        // alert(JSON.stringify(response));
+        console.log('response:',response);
         if (response.code == 0) {
             //alert('qq');
             var res = response.data;
-            $('#username').html('Hi' + !!res.iuser.name ? res.iuser.name : '你好')
+            $('#username').html(res.iuser.name)
                 .unbind('click')
                 .mouseover(showPersonNav)
                 .mouseout(hiddenPersonNav)
@@ -92,13 +92,13 @@ function loginInit () {
             var res = response.data;
             $('#mask').css('display', 'none')
             $('#sign-in').css('display', 'none')
-            $('#username').html('Hi ' + res.name)
+            $('#username').html(res.name)
                 .unbind('click')
                 .mouseover(showPersonNav)
                 .mouseout(hiddenPersonNav)
             $('#ps-nav').mouseover(showPersonNav).mouseout(hiddenPersonNav)
             sessionStorage.setItem("token", res.token);
-            window.location.reload();
+            //window.location.reload();
         });
     })
 
@@ -150,18 +150,24 @@ function hiddenPersonNav() {
                 Authorization: tokens,
                 'X-Requested-With': 'XMLHttpRequest'
             },
+            error: function (err) {
+                console.log("logout err:",err);
+            }
         }).done(function (respones) {
             var res = respones.data;
-            $('#username').html('Hi, 你好')
+            $('#username').html('Hi，你好')
             window.location.reload();
         });
+    });
+
+    $('#person').click(function () {
+        jumpPerson()
     })
 })();
 
 
 //去往个人中心
-
-function gotoPerson() {
+function jumpPerson() {
     $.ajax({
         url: logins + '/api/front/auth/getUserCenterId',
         type: 'GET',
