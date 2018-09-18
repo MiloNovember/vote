@@ -91,7 +91,8 @@
         var colour = getQueryVariable('colour') ? getQueryVariable('colour') : 2;
 
         if ($.cookie('isCheckAnswer') == '1') {
-            $('#resultBtn').css('visibility','initial')
+            $('#resultBtn').attr('style','')
+
             resultBtn.onclick = function () {
                 window.location.href = './result.html?title=' + title.innerHTML + '&id=' + voteId + '&colour=' + colour;
             }
