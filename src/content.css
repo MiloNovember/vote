@@ -89,6 +89,10 @@
     height: 160px;
 }
 
+.layui-form-item .img-wrap {
+    margin-bottom: 10px;
+}
+
 .layui-form-item input {
     display: inline-block;
     width: 120px;

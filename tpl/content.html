@@ -49,6 +49,11 @@
             <div class="layui-input-block fill-blanks">
                 {{each item.questionPartList as option index}}
                 <div class="fill-blanks-box">
+                    {{if !!option.url}}
+                    <div class="img-wrap">
+                        <img src="{{option.url}}" alt="">
+                    </div>
+                    {{/if}}
                     {{if !!option.mustSelect}}
                     <span class="required">*</span>
                     {{else}}

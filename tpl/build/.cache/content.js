@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1182,"md5":"b2751c9db646489200bced244a7bf7c0"}*/
+/*TMODJS:{"version":1187,"md5":"a13ad21277352801a98696d2fc20f9db"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
@@ -118,6 +118,12 @@ $out+=$escape(!item.required?'（非必答）':'');
 $out+=' </label> <div class="layui-input-block fill-blanks"> ';
 $each(item.questionPartList,function(option,index){
 $out+=' <div class="fill-blanks-box"> ';
+if(!!option.url){
+$out+=' <div class="img-wrap"> <img src="';
+$out+=$escape(option.url);
+$out+='" alt=""> </div> ';
+}
+$out+=' ';
 if(!!option.mustSelect){
 $out+=' <span class="required">*</span> ';
 }else{
