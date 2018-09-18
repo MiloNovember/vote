@@ -404,7 +404,12 @@ textarea{
 	margin: 7px 17px 8px 17px;
 }
 
-
+.ellipsis {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
 /*文字滚动*/
