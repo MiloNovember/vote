@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a59f7247-08ec-4b80-9ae6-f1ebd23e0e15" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/end.html" beforeDir="false" afterPath="$PROJECT_DIR$/end.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stop.html" beforeDir="false" afterPath="$PROJECT_DIR$/stop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/build/.cache/explain.js" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/build/.cache/explain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/build/template.js" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/build/template.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/explain.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/explain.html" afterDir="false" />
-    </list>
+    <list default="true" id="a59f7247-08ec-4b80-9ae6-f1ebd23e0e15" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -86,8 +78,8 @@
       <file leaf-file-name="content.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+            <state>
+              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -95,8 +87,8 @@
       <file leaf-file-name="layui-init.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/layui-init.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1927">
-              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            <state relative-caret-position="161">
+              <caret line="151" column="44" lean-forward="true" selection-start-line="151" selection-start-column="44" selection-end-line="151" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -201,7 +193,6 @@
         <option value="$PROJECT_DIR$/src/login.css" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/login.js" />
-        <option value="$PROJECT_DIR$/js/layui-init.js" />
         <option value="$USER_HOME$/Downloads/personalCenter.js" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/js/test.js" />
@@ -214,6 +205,7 @@
         <option value="$PROJECT_DIR$/js/result.js" />
         <option value="$PROJECT_DIR$/end.html" />
         <option value="$PROJECT_DIR$/stop.html" />
+        <option value="$PROJECT_DIR$/js/layui-init.js" />
       </list>
     </option>
   </component>
@@ -363,7 +355,7 @@
       <workItem from="1537232973410" duration="279000" />
       <workItem from="1537249125223" duration="3262000" />
       <workItem from="1537259788333" duration="2751000" />
-      <workItem from="1537319201369" duration="1593000" />
+      <workItem from="1537319201369" duration="2794000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535510909477</created>
@@ -596,11 +588,25 @@
       <option name="project" value="LOCAL" />
       <updated>1537261688503</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="bug">
+      <created>1537321683402</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1537321683403</updated>
+    </task>
+    <task id="LOCAL-00035" summary="限制最少回答一道题">
+      <created>1537322714139</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1537322714139</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179920000" />
+    <option name="totallyTimeSpent" value="181121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="956" extended-state="0" />
@@ -652,7 +658,9 @@
     <MESSAGE value="更改 bug jq IE8 不兼容问题" />
     <MESSAGE value="更改 标题超出一行问题" />
     <MESSAGE value="更改 填空图片问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改 填空图片问题" />
+    <MESSAGE value="bug" />
+    <MESSAGE value="限制最少回答一道题" />
+    <option name="LAST_COMMIT_MESSAGE" value="限制最少回答一道题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -887,13 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/result.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
@@ -957,10 +958,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/layui-init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1927">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        <state relative-caret-position="161">
+          <caret line="151" column="44" lean-forward="true" selection-start-line="151" selection-start-column="44" selection-end-line="151" selection-end-column="44" />
         </state>
       </provider>
     </entry>

@@ -29,7 +29,7 @@ Explain.prototype = {
             })
             .then(function (response) {
                 var result = response.data.quesInfoByQuesId
-                // console.log('获取空白问卷的response:',response.data);
+                console.log('获取空白问卷的response:',response.data);
                 _this.voteTitle = result.title;
 
                 //保存是否允许查看结果
@@ -37,11 +37,11 @@ Explain.prototype = {
 
                 var notAnswer = $.cookie(voteId);
                 if (notAnswer == 2) {
-                    window.location.href = "./end.html?title=" + _this.voteTitle + '&id=' + voteId + '&colour=2';
+                    window.location.href = "./end.html?title=" + _this.voteTitle + '&id=' + voteId + '&colour=' + result.colour;
                 }
 
                 if (response.data.isAnwserQues || result.delFlag == 1) {
-                    window.location.href = "./stop.html?title=" + _this.voteTitle + '&id=' + voteId + '&colour=2';
+                    window.location.href = "./stop.html?title=" + _this.voteTitle + '&id=' + voteId + '&colour=' + result.colour;
                 } else {
                     _this.res = result;
                     document.title = _this.res.title
