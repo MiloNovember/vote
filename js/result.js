@@ -64,7 +64,8 @@ Explain.prototype = {
     },
     getTitle: function () {
         var title = getQueryVariable('title');
-        document.title = document.getElementById('investigate-title').innerHTML = decodeURIComponent(title)
+        var titleVal = document.title = document.getElementById('investigate-title').innerHTML = decodeURIComponent(title)
+        $('#investigate-title').attr('title', titleVal)
     },
     getCss: function () {
         var colour = getQueryVariable('colour') ? getQueryVariable('colour') : 2;

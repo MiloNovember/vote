@@ -109,8 +109,8 @@ layui.use(['layer', 'form'], function () {
 
             // 获取用户填写数据
             var dataArr = []
-            var selection = $('input:checked')
-            var FillInTheBlanks = $('input[type=text]')
+            var selection = $('.layui-form input:checked')
+            var FillInTheBlanks = $('.layui-form input[type=text]')
             var textAreas = $('textarea')
             /*选择题获取页面数据*/
             $(selection).each(function (key, item) {
