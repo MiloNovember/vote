@@ -154,6 +154,16 @@ layui.use(['layer', 'form'], function () {
                 }
             });
 
+            // 限制至少回答一个问题
+            if (dataArr.length < 1) {
+                layer.open({
+                    skin: '提示',
+                    content: '请至少填写一个问题'
+                });
+
+                return
+            }
+
             $.support.cors = true
             $.ajax({
                 type: 'POST',
