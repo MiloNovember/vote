@@ -4,7 +4,7 @@
 
 .vote-title{
     color: #FFA637;
-    border-bottom: 2px solid #FFA637;
+    /*border-bottom: 2px solid #FFA637;*//*针对408调整*/
 }
 
 .layui-btn.button{

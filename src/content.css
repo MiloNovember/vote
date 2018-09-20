@@ -107,7 +107,7 @@
 
 .layui-form-item .fill-blanks input {
     display: inline-block;
-    width: 100%;
+    width: 315px;
     margin-left: 10px;
     height:24px;
     background: #fff;
@@ -119,7 +119,6 @@
 
 .fill-blanks .fill-blanks-box {
     margin: 0 0 15px 25px;
-    width: 50%;
 }
 
 .layui-form-item .is-long {

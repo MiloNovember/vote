@@ -50,7 +50,7 @@ input{
 }
 
 .description img {
-    margin: 0 auto;
+    margin: 25px auto;
     max-width: 100%;
     display: block;
 }
