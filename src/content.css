@@ -78,9 +78,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -3px 0 0 -3px;
-    width: 6px;
-    height: 6px;
+    margin: -2px 0 0 -2px;
+    width: 4px;
+    height: 4px;
     background: #fff;
 }
 
@@ -107,7 +107,7 @@
 
 .layui-form-item .fill-blanks input {
     display: inline-block;
-    width: 305px;
+    width: 100%;
     margin-left: 10px;
     height:24px;
     background: #fff;
@@ -119,6 +119,7 @@
 
 .fill-blanks .fill-blanks-box {
     margin: 0 0 15px 25px;
+    width: 50%;
 }
 
 .layui-form-item .is-long {
@@ -132,7 +133,7 @@
 
 .layui-form-item textarea {
     font-size: 12px;
-    width: 355px;
+    width: 100%;
     margin-left: 36px;
     display: inline-block;
     vertical-align: top;
@@ -207,6 +208,13 @@
     height: 6px;
     background: #fff;
     border-radius: 999px;
+}
+
+.layui-form .layui-form-checkbox span {
+    overflow: initial;
+    white-space: normal;
+    text-overflow: clip;
+    max-width: 95%;
 }
 
 
