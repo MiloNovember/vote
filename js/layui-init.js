@@ -162,29 +162,29 @@ layui.use(['layer', 'form'], function () {
                 });
 
                 return
-            }
-
-            $.support.cors = true
-            $.ajax({
-                type: 'POST',
-                contentType: 'application/json',
-                url: getData_url + '/vote/api/submitQuestionnaire',
-                data: JSON.stringify(dataArr),
-                error: function (err) {
-                    // console.log(err);
-                }
-            }).done(function (response) {
-                // console.log(response);
-                if (response.code == 0) {
-                    var title = document.title
-                    var colour = explain.res.colour
-                    var notAnswer = $.cookie(voteId);
-                    if (notAnswer == 1) {
-                        $.cookie(voteId, '2');
+            }else {
+                $.support.cors = true
+                $.ajax({
+                    type: 'POST',
+                    contentType: 'application/json',
+                    url: getData_url + '/vote/api/submitQuestionnaire',
+                    data: JSON.stringify(dataArr),
+                    error: function (err) {
+                        // console.log(err);
                     }
-                    window.location.href = './end.html?title=' + title + '&id=' + voteId + '&colour=' + colour;
-                }
-            })
+                }).done(function (response) {
+                    // console.log(response);
+                    if (response.code == 0) {
+                        var title = document.title
+                        var colour = explain.res.colour
+                        var notAnswer = $.cookie(voteId);
+                        if (notAnswer == 1) {
+                            $.cookie(voteId, '2');
+                        }
+                        window.location.href = './end.html?title=' + title + '&id=' + voteId + '&colour=' + colour;
+                    }
+                })
+            }
         }
 
         return false;

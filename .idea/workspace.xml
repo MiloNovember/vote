@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a59f7247-08ec-4b80-9ae6-f1ebd23e0e15" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/img/logo-vote.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/xuan-border-vote.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blue.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/blue.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gray.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/gray.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/green.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/green.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/end.html" beforeDir="false" afterPath="$PROJECT_DIR$/end.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/layui-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/layui-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/red.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/red.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/yellow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/yellow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/build/.cache/explain.js" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/build/.cache/explain.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/build/template.js" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/build/template.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/explain.html" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/explain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stop.html" beforeDir="false" afterPath="$PROJECT_DIR$/stop.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,7 +23,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="logo-vote.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/logo-vote.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="392" column="16" selection-start-line="392" selection-start-column="16" selection-end-line="392" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,10 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>('display', '')</find>
-      <find>login</find>
-      <find>id=&quot;sign-btn&quot;</find>
-      <find>sign-btn</find>
       <find>console.</find>
       <find>password</find>
       <find>tokens</find>
@@ -68,13 +77,16 @@
       <find>fill</find>
       <find>img</find>
       <find>vote-title</find>
+      <find>layer</find>
+      <find>&lt;img src=&quot;img/logo.png&quot;/&gt;</find>
+      <find>&lt;img src=&quot;img/logo-vote.png&quot;/&gt;</find>
+      <find>xuan-text1</find>
     </findStrings>
     <replaceStrings>
       <replace>/*margin-right:4px;*/</replace>
       <replace>name=&quot;&quot;</replace>
       <replace>alert</replace>
       <replace>identityCheck</replace>
-      <replace />
       <replace>num</replace>
       <replace>option.questionPart</replace>
       <replace>colour</replace>
@@ -90,6 +102,8 @@
       <replace>hiddenPersonNav</replace>
       <replace>('display', 'none')</replace>
       <replace>注销登录</replace>
+      <replace>&lt;img src=&quot;img/logo-vote.png&quot;/&gt;</replace>
+      <replace />
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -129,15 +143,15 @@
         <option value="$PROJECT_DIR$/js/result.js" />
         <option value="$PROJECT_DIR$/end.html" />
         <option value="$PROJECT_DIR$/stop.html" />
-        <option value="$PROJECT_DIR$/js/layui-init.js" />
         <option value="$PROJECT_DIR$/src/content.css" />
-        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/tpl/explain.html" />
         <option value="$PROJECT_DIR$/src/blue.css" />
         <option value="$PROJECT_DIR$/src/gray.css" />
         <option value="$PROJECT_DIR$/src/green.css" />
         <option value="$PROJECT_DIR$/src/red.css" />
         <option value="$PROJECT_DIR$/src/yellow.css" />
+        <option value="$PROJECT_DIR$/js/layui-init.js" />
+        <option value="$PROJECT_DIR$/src/index.css" />
       </list>
     </option>
   </component>
@@ -162,7 +176,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="956" />
@@ -197,11 +211,6 @@
               <item name="vote" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="vote" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vote" type="462c0819:PsiDirectoryNode" />
-              <item name="tpl" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -225,9 +234,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/img" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/tpl" />
     </key>
@@ -280,6 +289,8 @@
       <workItem from="1537249125223" duration="3262000" />
       <workItem from="1537259788333" duration="2751000" />
       <workItem from="1537319201369" duration="2794000" />
+      <workItem from="1537438211009" duration="122000" />
+      <workItem from="1537438828492" duration="520000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535510909477</created>
@@ -526,45 +537,40 @@
       <option name="project" value="LOCAL" />
       <updated>1537322714139</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="修改需求 与 bug">
+      <created>1537437333801</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1537437333801</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186319000" />
+    <option name="totallyTimeSpent" value="187244000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="956" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="958" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16033755" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50030136" side_tool="true" weight="0.32945284" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4996986" weight="0.32945284" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22817229" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16957027" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4996986" weight="0.32945284" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50030136" side_tool="true" weight="0.32945284" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16414435" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +601,8 @@
     <MESSAGE value="更改 填空图片问题" />
     <MESSAGE value="bug" />
     <MESSAGE value="限制最少回答一道题" />
-    <option name="LAST_COMMIT_MESSAGE" value="限制最少回答一道题" />
+    <MESSAGE value="修改需求 与 bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改需求 与 bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -708,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/layui-init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3960">
-          <caret line="165" lean-forward="true" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -760,9 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -785,13 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="22" selection-start-column="12" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="65" column="11" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -837,35 +827,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/bg.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/finished.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/img.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/js/layui-init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3792">
+          <caret line="158" column="21" selection-start-line="158" selection-start-column="16" selection-end-line="158" selection-end-column="21" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/img/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/multi.png">
+    <entry file="file://$PROJECT_DIR$/img/logo-vote.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/participation.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/single.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/user.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/user1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/menu-icon.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="392" column="16" selection-start-line="392" selection-start-column="16" selection-end-line="392" selection-end-column="16" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
