@@ -16,7 +16,7 @@ var userName = null
 //退出登录按钮 sign-out
 
 //初始化
-$('#username').html("Hi，你好")
+$('#username').html("Hi，你好");
 $.support.cors = true;
 (function () {
     $.ajax({

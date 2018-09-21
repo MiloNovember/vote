@@ -58,6 +58,7 @@ layui.use(['layer', 'form'], function () {
 
     /*点击提交后的回调*/
     form.on('submit(*)', function (data) {
+        console.log('submit(1)');
         /*选择题*/
         var questions = $('.layui-form-item.selection-req')
         var isFirst = true
@@ -94,6 +95,7 @@ layui.use(['layer', 'form'], function () {
         }
 
         if (!isFirst) {
+            console.log('请您按要求完成问卷');
             layer.open({
                 skin: '提示',
                 content: '请您按要求完成问卷'
@@ -101,6 +103,7 @@ layui.use(['layer', 'form'], function () {
         } else {
             // 校验是否匿名
             var tokens = sessionStorage.getItem("token") || "";
+            console.log('tokens',tokens);
             if (!explain.res.anonymity && !tokens) {
                 $('#username').click()
                 $(window).scrollTop(0);
@@ -153,15 +156,13 @@ layui.use(['layer', 'form'], function () {
                     })
                 }
             });
-
+            console.log(dataArr);
             // 限制至少回答一个问题
             if (dataArr.length < 1) {
                 layer.open({
                     skin: '提示',
                     content: '请至少填写一个问题'
                 });
-
-                return
             }else {
                 $.support.cors = true
                 $.ajax({
