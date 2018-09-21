@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1187,"md5":"a13ad21277352801a98696d2fc20f9db"}*/
+/*TMODJS:{"version":1188,"md5":"05ff57c6657bb722991066bd5ade38ea"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
@@ -165,6 +165,6 @@ $out+=' </div> </div> ';
 }
 $out+=' ';
 });
-$out+=' <div class="layui-form-item"> <div class="layui-input-block"> <button class="button layui-btn" lay-submit lay-filter="*">提交</button> </div> </div> </form> ';
+$out+=' <div class="layui-form-item"> <div class="layui-input-block"> <button id="submitButton" class="button layui-btn" lay-submit lay-filter="*">提交</button> </div> </div> </form> ';
 return new String($out);
 });

@@ -1,4 +1,4 @@
-var voteId = getQueryVariable('id') ? getQueryVariable('id') : 1;
+var voteId = getQueryVariable('id') ? getQueryVariable('id') : '';
 
 function Explain() {
 }

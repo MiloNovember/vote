@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--[if lte IE 8]>
+    <script src="./js/PIE_IE678.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="./src/index.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/content.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="./src/login.css"/>
+    <!--layUI.css-->
+    <link rel="stylesheet" type="text/css" href="./src/layui.css"/>
+    <link id="css-src" rel="stylesheet" href="./src/gray.css">
+    <link rel="icon" href="data:;base64,=">
+    <!--layUI.js-->
+    <script type="text/javascript" src="./js/layui.js"></script>
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./tpl/build/template.js"></script>
+    <title></title>
+</head>
+
+<style type="text/css">
+    .icon {
+        /* 通过设置 font-size 来改变图标大小 */
+        width: 1em;
+        height: 1em;
+        /* 图标和文字相邻时，垂直对齐 */
+        /*vertical-align: -0.15em;*/
+        /* 通过设置 color 来改变 SVG 的颜色/fill */
+        fill: currentColor;
+        /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+         normalize.css 中也包含这行 */
+        overflow: hidden;
+    }
+</style>
+
+<body>
+
+<div class="vote-content">
+    <div id="explain"></div>
+    <div class="content"></div>
+</div>
+
+<div class="footer"></div>
+
+<div id="loginEle"></div>
+
+<script src="./js/common.js"></script>
+<script src="./js/layui-init.js"></script>
+<script src="./js/index.js"></script>
+
+<script>
+    $(function () {
+        layui.use('layer', function () {
+            var layer = layui.layer
+            var clock = setInterval(function () {
+                if (document.getElementById('submitButton')) {
+                    clearInterval(clock)
+                    $('#submitButton')
+                        .removeAttr('lay-submit')
+                        .removeAttr('lay-filter')
+                        .click(function () {
+                            layer.open({
+                                skin: '提示',
+                                content: '预览模式下提交无效'
+                            });
+                            return false;
+                        })
+                }
+            }, 1000)
+        })
+    })
+</script>
+</body>
+</html>

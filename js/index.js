@@ -1,4 +1,4 @@
-var voteId = getQueryVariable('getQueryVariable') ? getQueryVariable('getQueryVariable') : 89;
+var voteId = getQueryVariable('getQueryVariable') ? getQueryVariable('getQueryVariable') : '';
 var explain = null
 function Explain() {
 }

@@ -88,7 +88,7 @@
     window.onload = function () {
         var title = document.getElementById('investigate-title');
         var resultBtn = document.getElementById('resultBtn');
-        var voteId = getQueryVariable('id') ? getQueryVariable('id') : 1;
+        var voteId = getQueryVariable('id') ? getQueryVariable('id') : '';
         var colour = getQueryVariable('colour') ? getQueryVariable('colour') : 2;
 
         if ($.cookie('isCheckAnswer') == '1') {
