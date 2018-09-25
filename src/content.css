@@ -100,7 +100,7 @@
     line-height:24px;
     margin-left: 10px;
     background: #fff;
-    border: 1px solid #C5C5C5;
+    border: 1px solid #e6e6e6;
     border-radius: 2px;
     behavior: url(pie.htc);
 }
@@ -111,7 +111,7 @@
     margin-left: 10px;
     height:24px;
     background: #fff;
-    border: 1px solid #C5C5C5;
+    border: 1px solid #e6e6e6;
     border-radius: 2px;
     behavior: url(pie.htc);
     vertical-align: middle;
@@ -119,6 +119,11 @@
 
 .fill-blanks .fill-blanks-box {
     margin: 0 0 15px 25px;
+}
+
+.fill-blanks .fill-blanks-box textarea {
+    margin-left: 6px;
+    width: 50%;
 }
 
 .layui-form-item .is-long {
