@@ -17,7 +17,7 @@ var userName = null
 
 //初始化
 $('#username').html("Hi，你好");
-$.support.cors = true;
+// $.support.cors = true;
 (function () {
     $.ajax({
         type: "get",
@@ -30,7 +30,7 @@ $.support.cors = true;
             "X-Requested-With": "XMLHttpRequest"
         },
         error: function (err) {
-            console.log('err:',JSON.stringify(err))
+            // console.log('err:',JSON.stringify(err))
         }
     }).done(function (response) {
         // alert(JSON.stringify(response));
@@ -84,7 +84,7 @@ function loginInit () {
             contentType: "application/json",
             data: JSON.stringify(data),
             error: function (err) {
-                console.log(err);
+                // console.log(err);
                 // var err = err.responseJSON.message;
                 //alert(JSON.stringify(err));
                 $('#login-err').html('账号或密码不正确').css('display', 'block')
@@ -155,7 +155,7 @@ function hiddenPersonNav() {
                 'X-Requested-With': 'XMLHttpRequest'
             },
             error: function (err) {
-                console.log("logout err:",err);
+                //console.log("logout err:",err);
             }
         }).done(function (respones) {
             var res = respones.data;

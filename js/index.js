@@ -20,8 +20,8 @@ Explain.prototype = {
         return $
             .ajax({
                 type: "GET",
-                jsonp: "callback",
-                dataType: "jsonp",
+                /*jsonp: "callback",
+                dataType: "jsonp",*/
                 url: getData_url + "/vote/api/getQuesInfoByQuesId",
                 data: {
                     questionnaireId: voteId
@@ -29,7 +29,7 @@ Explain.prototype = {
             })
             .then(function (response) {
                 var result = response.data.quesInfoByQuesId
-                console.log('获取空白问卷的response:',response.data);
+                // console.log('获取空白问卷的response:',response.data);
                 _this.voteTitle = result.title;
 
                 //保存是否允许查看结果

@@ -29,7 +29,7 @@ function hide() {
 })();
 
 (function () {
-    $.support.cors = true
+    // $.support.cors = true
     return $
         .ajax({
             type: "GET",

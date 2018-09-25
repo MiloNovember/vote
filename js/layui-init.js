@@ -154,7 +154,7 @@ layui.use(['layer', 'form'], function () {
                     })
                 }
             });
-            console.log(dataArr);
+            //console.log(dataArr);
             // 限制至少回答一个问题
             if (dataArr.length < 1) {
                 layer.open({
@@ -162,7 +162,7 @@ layui.use(['layer', 'form'], function () {
                     content: '请至少填写一个问题'
                 });
             }else {
-                $.support.cors = true
+                // $.support.cors = true
                 $.ajax({
                     type: 'POST',
                     contentType: 'application/json',

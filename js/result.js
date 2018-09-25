@@ -20,8 +20,8 @@ Explain.prototype = {
         return $
             .ajax({
                 type: "GET",
-                jsonp: "callback",
-                dataType: "jsonp",
+                /*jsonp: "callback",
+                dataType: "jsonp",*/
                 url: getData_url + "/vote/api/checkAnwsers",
                 data: {
                     questionType: 1,
@@ -31,7 +31,7 @@ Explain.prototype = {
             .then(function (response) {
                 if (response.code == 0) {
                     _this.res = response.data;
-                    console.log(response.data);
+                    // console.log(response.data);
                 }
             })
     },
