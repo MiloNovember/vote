@@ -20,8 +20,8 @@ Explain.prototype = {
         return $
             .ajax({
                 type: "GET",
-                /*jsonp: "callback",
-                dataType: "jsonp",*/
+                jsonp: "callback",
+                dataType: "jsonp",
                 url: getData_url + "/vote/api/getQuesInfoByQuesId",
                 data: {
                     questionnaireId: voteId
