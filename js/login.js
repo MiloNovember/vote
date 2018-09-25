@@ -50,17 +50,17 @@ $.support.cors = true;
     });
 })();
 
-//弹出层
-(function () {
-    $('#username').click(function (e) {
-        $('#mask').css('display', 'block')
-        $('#sign-in').css('display', 'block')
-    }).one("click",function(){
-        loginInit()
-        maskInit()
-        return false;
-    });
-})();
+//弹出层 登录
+// (function () {
+//     $('#username').click(function (e) {
+//         $('#mask').css('display', 'block')
+//         $('#sign-in').css('display', 'block')
+//     }).one("click",function(){
+//         loginInit()
+//         maskInit()
+//         return false;
+//     });
+// })();
 
 function maskInit() {
     $('#mask').click(function () {

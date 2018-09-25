@@ -218,7 +218,7 @@
     overflow: initial;
     white-space: normal;
     text-overflow: clip;
-    max-width: 95%;
+    max-width: 700px;
 }
 
 
