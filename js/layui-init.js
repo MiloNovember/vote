@@ -162,7 +162,7 @@ layui.use(['layer', 'form'], function () {
                     content: '请至少填写一个问题'
                 });
             }else {
-                // $.support.cors = true
+                $.support.cors = true
                 $.ajax({
                     type: 'POST',
                     contentType: 'application/json',

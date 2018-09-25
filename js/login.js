@@ -17,7 +17,7 @@ var userName = null
 
 //初始化
 $('#username').html("Hi，你好");
-// $.support.cors = true;
+$.support.cors = true;
 (function () {
     $.ajax({
         type: "get",
