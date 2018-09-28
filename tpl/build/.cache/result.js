@@ -1,4 +1,4 @@
-/*TMODJS:{"version":93,"md5":"33cc5ba67ab3e5b76f7d227b901d99e6"}*/
+/*TMODJS:{"version":96,"md5":"33cc5ba67ab3e5b76f7d227b901d99e6"}*/
 template('result',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$index=$data.$index,$out='';$each(questionList,function(item,index){

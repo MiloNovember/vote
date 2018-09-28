@@ -19,7 +19,6 @@
    /* position: relative;
     top: 3px;*/
     color: #222;
-    font-size: 12px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -28,7 +27,6 @@
     position: relative;
     top: 0px;
     color: #222;
-    font-size: 12px;
     display: inline-block;
     margin-left: 10px;
 }
@@ -55,15 +53,8 @@
     display: inline-block;
 }
 
-.layui-form-item .layui-form-checkbox span {
-    font-size: 12px;
-}
 .layui-form-item .layui-form-checkbox[lay-skin=primary] span {
     color: #222;
-}
-
-.layui-form .layui-form-radio * {
-    font-size: 12px;
 }
 
 .layui-form .layui-form-checkbox[lay-skin=primary] i {
@@ -131,12 +122,7 @@
     margin-left: 0;
 }
 
-.layui-form-item input {
-    font-size: 12px;
-}
-
 .layui-form-item textarea {
-    font-size: 12px;
     width: 100%;
     margin-left: 36px;
     display: inline-block;
@@ -176,7 +162,6 @@
 
 .layui-form .description-word {
     display: inline-block;
-    font-size: 12px;
 }
 
 .layui-form .layui-form-item .layui-form-danger {

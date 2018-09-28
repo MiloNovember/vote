@@ -102,6 +102,7 @@ layui.use(['layer', 'form'], function () {
             // 校验是否匿名
             var tokens = sessionStorage.getItem("token") || "";
             // console.log('tokens',tokens);
+            /*非匿名投票校验是否登录*/
             if (!explain.res.anonymity && !tokens) {
                 $('#username').click()
                 $(window).scrollTop(0);

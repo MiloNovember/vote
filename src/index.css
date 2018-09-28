@@ -2,6 +2,7 @@
 html,body,ul,ol,li{
     margin:0;padding:0;
 }
+
 a{
     text-decoration: none;
 }
@@ -431,3 +432,72 @@ textarea{
 }
 
 
+/*408 特殊大字号 要求*/
+body {
+    font-size: 16px !important;
+}
+
+.layui-form .layui-form-item label {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.layui-form .layui-form-radio * {
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.layui-form-item .layui-form-checkbox span {
+    font-size: 16px;
+}
+
+.layui-form-checkbox[lay-skin=primary] span {
+    line-height: 25px !important;
+}
+
+#investigate-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.layui-form-checkbox[lay-skin=primary] i {
+    top: 3px !important;
+}
+
+:root .layui-form-radioed i:before {
+    top: 5px !important;
+}
+
+:root .layui-form-radioed i:after {
+    top: 9px !important;
+}
+
+.result-content label {
+    font-size: 18px !important;
+}
+
+.result-content .result-item ul li .result-title {
+    font-size: 16px !important;
+}
+
+.result-content .result-item ul li .progress-num {
+    font-size: 14px !important;
+}
+
+.result-content .result-item ul li .sum {
+    font-size: 14px !important;
+}
+
+.layui-form-item img {
+    width: 315px !important;
+    height: 236px !important;
+}
+
+.layui-form .layui-input-block .box {
+    width: 315px !important;
+    margin: 20px 40px 0px 36px !important;
+}
+
+.button {
+    font-size: 20px !important;
+}
