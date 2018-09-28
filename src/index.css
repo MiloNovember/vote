@@ -434,8 +434,8 @@ textarea{
 
 /*408 特殊大字号 要求*/
 body {
-    font-size: 16px !important;
-}
+     font-size: 16px !important;
+ }
 
 .layui-form .layui-form-item label {
     font-size: 18px;

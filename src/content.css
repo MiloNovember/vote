@@ -28,7 +28,6 @@
     top: 0px;
     color: #222;
     display: inline-block;
-    margin-left: 10px;
 }
 
 .layui-form .ml-36 {
@@ -58,22 +57,23 @@
 }
 
 .layui-form .layui-form-checkbox[lay-skin=primary] i {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     font-size: 12px;
-    line-height: 10px;
+    line-height: 12px;
     margin-top: 2px;
 }
-.layui-form .layui-form-checkbox[lay-skin=primary] i:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -2px 0 0 -2px;
-    width: 4px;
-    height: 4px;
-    background: #fff;
-}
+
+/*.layui-form .layui-form-checkbox[lay-skin=primary] i:before {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     margin: -2px 0 0 -2px;
+     width: 4px;
+     height: 4px;
+     background: #fff;
+ }*/
 
 .layui-form-item img {
     width: 240px;
@@ -89,7 +89,6 @@
     width: 120px;
     height:24px;
     line-height:24px;
-    margin-left: 10px;
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 2px;
@@ -99,22 +98,24 @@
 .layui-form-item .fill-blanks input {
     display: inline-block;
     width: 315px;
-    margin-left: 10px;
     height:24px;
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 2px;
     behavior: url(pie.htc);
-    vertical-align: middle;
 }
 
 .fill-blanks .fill-blanks-box {
-    margin: 0 0 15px 25px;
+    margin: 0 0 15px 36px;
 }
 
 .fill-blanks .fill-blanks-box textarea {
     margin-left: 6px;
     width: 50%;
+}
+
+.fill-blanks-box .fill-blanks-title {
+    margin-right: 10px;
 }
 
 .layui-form-item .is-long {
@@ -176,7 +177,7 @@
     position: relative;
 }
 
-:root .layui-form-radioed i:before {
+/*:root .layui-form-radioed i:before {
     position: absolute;
     top: 7px;
     left: 1px;
@@ -197,7 +198,7 @@
     height: 6px;
     background: #fff;
     border-radius: 999px;
-}
+}*/
 
 .layui-form .layui-form-checkbox span {
     overflow: initial;
@@ -205,5 +206,4 @@
     text-overflow: clip;
     max-width: 700px;
 }
-
 

@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1188,"md5":"05ff57c6657bb722991066bd5ade38ea"}*/
+/*TMODJS:{"version":1190,"md5":"d70bca749045daa393914b4559860bdf"}*/
 template('content',function($data,$filename
 /*``*/) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,questionList=$data.questionList,item=$data.item,index=$data.index,$escape=$utils.$escape,option=$data.option,$out='';$out+='<form class="layui-form" action=""> ';
@@ -129,9 +129,13 @@ $out+=' <span class="required">*</span> ';
 }else{
 $out+=' &nbsp; ';
 }
-$out+=' <span>';
+$out+=' ';
+if(!!option.content){
+$out+=' <span class="fill-blanks-title">';
 $out+=$escape(option.content);
 $out+='</span> ';
+}
+$out+=' ';
 if(!!option.lineNum){
 $out+=' <textarea questionId="';
 $out+=$escape(item.id);

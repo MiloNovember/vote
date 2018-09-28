@@ -59,7 +59,9 @@
                     {{else}}
                     &nbsp;
                     {{/if}}
-                    <span>{{option.content}}</span>
+                    {{if !!option.content}}
+                    <span class="fill-blanks-title">{{option.content}}</span>
+                    {{/if}}
                     {{if !!option.lineNum}}
                     <textarea questionId="{{item.id}}" questionPartId="{{option.id}}" placeholder="" rows="3" class="layui-textarea" maxlength="{{option.maximum}}" required  lay-verify="{{!!option.mustSelect&&!!item.required?'required':''}}|{{!item.required?'':option.verification==1?'telephone':option.verification==2?'postCode':option.verification==3?'identityCheck':option.verification==4?'cn':option.verification==5?'english':option.verification==6?'num':option.verification==7?'eMail':option.verification==8?'Url':''}}" lay-verType="alert"></textarea>
                     {{else}}

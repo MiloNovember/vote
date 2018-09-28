@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a59f7247-08ec-4b80-9ae6-f1ebd23e0e15" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/layui-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/layui-init.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/content.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/build/.cache/result.js" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/build/.cache/result.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpl/build/template.js" beforeDir="false" afterPath="$PROJECT_DIR$/tpl/build/template.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,20 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="content.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="content.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/content.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="220">
+              <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="500" lean-forward="true" selection-start-line="500" selection-end-line="500" />
+            <state relative-caret-position="2044">
+              <caret line="494" lean-forward="true" selection-start-line="494" selection-end-line="494" />
             </state>
           </provider>
         </entry>
@@ -97,8 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>border-radius</find>
-      <find>http://10</find>
       <find>getData_url</find>
       <find>userName</find>
       <find>注销登陆</find>
@@ -127,6 +122,8 @@
       <find>font-size: 12</find>
       <find>line-height</find>
       <find>progress-num</find>
+      <find>.fill-blanks</find>
+      <find>margin-left: 10px</find>
     </findStrings>
     <replaceStrings>
       <replace>/*margin-right:4px;*/</replace>
@@ -194,10 +191,10 @@
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/js/result.js" />
         <option value="$PROJECT_DIR$/js/login.js" />
-        <option value="$PROJECT_DIR$/src/content.css" />
         <option value="$PROJECT_DIR$/js/layui-init.js" />
         <option value="$PROJECT_DIR$/tpl/result.html" />
         <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/content.css" />
       </list>
     </option>
   </component>
@@ -343,7 +340,7 @@
       <workItem from="1537865868919" duration="730000" />
       <workItem from="1538013624272" duration="1846000" />
       <workItem from="1538096262263" duration="2098000" />
-      <workItem from="1538118977097" duration="3825000" />
+      <workItem from="1538118977097" duration="6612000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1535510909477</created>
@@ -639,25 +636,32 @@
       <option name="project" value="LOCAL" />
       <updated>1537868671249</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="针对408 大字体版本">
+      <created>1538124078552</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1538124078553</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203178000" />
+    <option name="totallyTimeSpent" value="205965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="958" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16033755" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16033755" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50030136" side_tool="true" weight="0.32945284" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4996986" visible="true" weight="0.32868758" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4996986" weight="0.32868758" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.15911731" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.15911731" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -676,7 +680,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="微调整" />
     <MESSAGE value="layUI使用插件重构" />
     <MESSAGE value="调查问卷" />
     <MESSAGE value="ie8兼容问题大致完成" />
@@ -701,7 +704,8 @@
     <MESSAGE value="UI微调" />
     <MESSAGE value="禁用登录，ie8 bug max-width" />
     <MESSAGE value="jsonp 开放" />
-    <option name="LAST_COMMIT_MESSAGE" value="jsonp 开放" />
+    <MESSAGE value="针对408 大字体版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="针对408 大字体版本" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -940,13 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/content.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/gray.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1003,8 +1000,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="500" lean-forward="true" selection-start-line="500" selection-end-line="500" />
+        <state relative-caret-position="2044">
+          <caret line="494" lean-forward="true" selection-start-line="494" selection-end-line="494" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="90" column="21" selection-start-line="90" selection-start-column="21" selection-end-line="90" selection-end-column="21" />
         </state>
       </provider>
     </entry>
